@@ -1,0 +1,97 @@
+{
+  "publisher": "National Bureau of Statistics, Nigeria",
+  "catalogue_url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/related-materials",
+  "terms_url": "https://www.nigerianstat.gov.ng/page/terms",
+  "licence_status": "Publicly downloadable; redistribution restricted by NBS terms; not verified as unrestricted open-licensed data.",
+  "resources": [
+    {
+      "resource_id": 1230,
+      "periods": [
+        "2025-01"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1230",
+      "sha256": "953efd76c8320b5e4799a8e116e78903523198021ad4054d10c581b42627ea2e"
+    },
+    {
+      "resource_id": 1239,
+      "periods": [
+        "2025-02"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1239",
+      "sha256": "95e5611a5be62eed9e19d93d5da165f42b9fee6f8855a4e9ece359a87bfe3e91"
+    },
+    {
+      "resource_id": 1240,
+      "periods": [
+        "2025-03"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1240",
+      "sha256": "af0d8adf82fd54aab97cbe7e57060877fd01aeab472e4bfb0df9fe9aa491d6d3"
+    },
+    {
+      "resource_id": 1231,
+      "periods": [
+        "2025-04"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1231",
+      "sha256": "cc3bd768935f01e295043c0812a5ee7380da16b07c6c473a3f376e49cd3017a4"
+    },
+    {
+      "resource_id": 1282,
+      "periods": [
+        "2025-05"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1282",
+      "sha256": "250697ee78988741cfecf4a4fe2bdf14bd8850b7797cbe9b70feb74657cd5118"
+    },
+    {
+      "resource_id": 1283,
+      "periods": [
+        "2025-06"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1283",
+      "sha256": "350049bbae41698c7675a3b226221bcb3eb15c4ae5a02bf182d00574302e576f"
+    },
+    {
+      "resource_id": 1284,
+      "periods": [
+        "2025-07"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1284",
+      "sha256": "81cbea3d16a43a4d046f7aaf5453fb7700426bae74417731e23056c1f8d139cf"
+    },
+    {
+      "resource_id": 1310,
+      "periods": [
+        "2025-08",
+        "2025-09"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1310",
+      "sha256": "cd38cbbf6840d4619639541eea1b094e33895ceebb1fcba0b25b5216c51f9742"
+    },
+    {
+      "resource_id": 1319,
+      "periods": [
+        "2025-10"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1319",
+      "sha256": "48479cfa72b09bab4f051bca03cd2715a4d57753dbecc8efa8937df6b3f3b125"
+    },
+    {
+      "resource_id": 1343,
+      "periods": [
+        "2025-11"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1343",
+      "sha256": "2355a94a8f80ef0a097946abf244096a66acdbf7ca541b3bf7323a665626a710"
+    },
+    {
+      "resource_id": 1356,
+      "periods": [
+        "2025-12"
+      ],
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/download/1356",
+      "sha256": "8a7a990ab429e11cc01d05231c209d6ead1ec33131b6cb16573d9e4ce522f3d1"
+    }
+  ]
+}

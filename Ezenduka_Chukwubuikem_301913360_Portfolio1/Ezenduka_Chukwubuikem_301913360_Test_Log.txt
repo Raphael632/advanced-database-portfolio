@@ -1,0 +1,25 @@
+test_cosmetic_label_cleanup_preserves_meaning (__main__.ImportTests.test_cosmetic_label_cleanup_preserves_meaning) ... ok
+test_invalid_price_is_not_filled_with_zero (__main__.ImportTests.test_invalid_price_is_not_filled_with_zero) ... ok
+test_period_is_taken_from_header (__main__.ImportTests.test_period_is_taken_from_header) ... ok
+test_round_half_up (__main__.ImportTests.test_round_half_up) ... ok
+test_unrecognised_header_rejected (__main__.ImportTests.test_unrecognised_header_rejected) ... ok
+test_duplicate_observation_rejected (__main__.SchemaTests.test_duplicate_observation_rejected) ... ok
+test_duplicate_source_cell_rejected (__main__.SchemaTests.test_duplicate_source_cell_rejected) ... ok
+test_failed_batch_rolls_back (__main__.SchemaTests.test_failed_batch_rolls_back) ... ok
+test_foreign_keys_enabled (__main__.SchemaTests.test_foreign_keys_enabled) ... ok
+test_invalid_geography_rejected (__main__.SchemaTests.test_invalid_geography_rejected) ... ok
+test_invalid_period_rejected (__main__.SchemaTests.test_invalid_period_rejected) ... ok
+test_missing_item_rejected (__main__.SchemaTests.test_missing_item_rejected) ... ok
+test_non_integer_price_rejected (__main__.SchemaTests.test_non_integer_price_rejected) ... ok
+test_null_price_rejected (__main__.SchemaTests.test_null_price_rejected) ... ok
+test_referenced_item_delete_rejected (__main__.SchemaTests.test_referenced_item_delete_rejected) ... ok
+test_source_prices_immutable (__main__.SchemaTests.test_source_prices_immutable) ... ok
+test_task_requires_valid_user (__main__.SchemaTests.test_task_requires_valid_user) ... ok
+test_task_status_restricted (__main__.SchemaTests.test_task_status_restricted) ... ok
+test_versioned_task_update (__main__.SchemaTests.test_versioned_task_update) ... ok
+test_zero_and_negative_prices_rejected (__main__.SchemaTests.test_zero_and_negative_prices_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.060s
+
+OK

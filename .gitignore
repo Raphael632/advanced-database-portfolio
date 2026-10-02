@@ -1,0 +1,10 @@
+.local/
+__pycache__/
+*.pyc
+*.sqlite3
+*.sqlite3-*
+.venv/
+.env
+*.zip
+*.xlsx
+*.bin

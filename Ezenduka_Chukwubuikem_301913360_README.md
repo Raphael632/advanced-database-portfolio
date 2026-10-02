@@ -1,0 +1,67 @@
+# Advanced Database Systems Portfolio
+
+**Student:** Ezenduka Chukwubuikem  
+**Student ID:** 301913360  
+**Course:** MIT 8103, 2026/2027 First Semester  
+**Repository:** https://github.com/Raphael632/advanced-database-portfolio  
+**Deadline:** 15 November 2026; preferred completion during October.
+
+## Case study
+
+**Nigeria Food Price Observatory** is a student-designed research and data-quality system using the National Bureau of Statistics (NBS) Selected Food Price Watch. It is not an NBS production system or an NBS-endorsed project. The data provider is NBS; the application and its workflow are a simulated academic case study.
+
+The system will import monthly published averages, preserve their provenance, compare like-for-like item prices over time and across regions, and support a reviewer workflow. Database users are research analysts, data stewards and an administrator.
+
+## Phases
+
+| Phase | Required work | Status |
+|---|---|---|
+| 1 | Design, ER diagram, schema, constraints, normalisation and executed validation | Implemented and tested; student review pending |
+| 2 | SQL results, query plans, indexing and measured performance | Not started |
+| 3 | Commit, rollback, isolation and concurrent reviewer updates | Not started |
+| 4 | Implemented NoSQL model of the same case study | Not started |
+| 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Not started |
+| Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Not started |
+
+## Source access and redistribution
+
+Source catalogue: https://microdata.nigerianstat.gov.ng/index.php/catalog/162/related-materials  
+NBS terms: https://www.nigerianstat.gov.ng/page/terms
+
+These are publicly downloadable data, not a dataset verified under an unrestricted open licence. NBS terms restrict redistribution without written agreement. Source workbooks, archive files and the populated database are therefore local-only and excluded from Git and the submission package. The code, source URLs, checksums, design and aggregate validation evidence are shareable project outputs. An assessor can reproduce the database by obtaining the data directly from NBS under its terms. Do not attach the full data or populated database without resolving redistribution permission.
+
+The NBS terms also request an electronic copy of publications based on its data. Any correspondence or fulfilment of that requirement is a student action; no report has been sent to NBS.
+
+## Portfolio 1 results
+
+The executed database contains eight tables and one reporting view. It holds **3,528 source observations**, **12 months**, **7 geographies**, and **43 distinct source labels**. All observations reconcile with the downloaded workbook cells after rounding to kobo. Twenty offline tests passed. See the [design explanation](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Design.md), [ER diagram](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_ER_Diagram.png), and [verification report](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Verification.md).
+
+## Reproduce Portfolio 1
+
+Requirements: Python 3.12 or later, SQLite 3.37 or later, and openpyxl 3.1.5. The Python standard library supplies SQLite; check its version because builds can differ. No server, paid cloud account or database password is required for this phase.
+
+From a terminal in this folder:
+
+```powershell
+python -m pip install -r Ezenduka_Chukwubuikem_301913360_Requirements.txt
+python Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Build.py all
+python Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Tests.py
+```
+
+On this computer, the supplied `Ezenduka_Chukwubuikem_301913360_Run_Portfolio1.ps1` launcher can also use the available bundled Python runtime. Run it from PowerShell with `./Ezenduka_Chukwubuikem_301913360_Run_Portfolio1.ps1`. The launcher validates an existing database rather than rebuilding it, and then runs the tests. If script execution is disabled, use the Python commands above; there is no need to change the computer's security policy.
+
+The `all` Python command downloads the pinned resources into `.local/raw`, verifies their hashes, builds `.local/Ezenduka_Chukwubuikem_301913360_Food_Prices.sqlite3` and writes `.local/validation.json`. Internet access is needed only to fetch missing sources. These local data are ignored by Git. Use `validate` instead of `all` on later runs to check an existing database. `fetch` only downloads/verifies resources; `build` uses already-downloaded files and refuses to overwrite an existing database. `--workspace PATH` selects another local data directory. Source changes require review and an explicit manifest update, not a checksum bypass.
+
+The initially executed database on the development computer is held outside the submission folder in the task's `work/portfolio_runtime` directory. Its aggregate verification evidence has been copied into Portfolio 1. The submission can be reproduced independently with the commands above.
+
+## Student review before Phase 2
+
+Read the design document and explain (1) why a price needs the month, item and geography to identify it, (2) why 42 rows per source table produce 43 distinct labels overall, and (3) why a task update needs both a version condition and an increment. Run the tests and record any observations or requested changes in the AI-use log. This review is still pending; the implementation is not a claim of completed personal reflection.
+
+## Submission naming
+
+The final folder is `Ezenduka_Chukwubuikem_301913360`. Authored submission files use `Ezenduka_Chukwubuikem_301913360_DocumentType.ext`. Git configuration is development infrastructure and must be excluded from the final ZIP. This is a developing portfolio, not a ready-to-submit package.
+
+## Originality and understanding
+
+Record sources and actual test results as work progresses. Never claim tests that were not run, manufacture performance improvements, or backdate commits. The final reflection must describe the student's own review and learning. AI assistance is recorded separately and requires an accurate account of the student's subsequent verification.
