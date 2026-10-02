@@ -8,6 +8,10 @@ Tool: OpenAI Codex.
 - Created the project structure and requirements record.
 - Researched and inspected official NBS source tables and usage terms.
 - Assisted with the case-study proposal and phase planning.
+- Generated and executed the Portfolio 1 SQLite schema and Python source importer.
+- Generated normalisation explanations, the data dictionary and the ER diagram.
+- Reconciled 3,528 imported observations to source cells and executed 20 automated tests.
+- Documented stale worksheet titles, the two distinct smoked-fish labels and redistribution restrictions.
 
 ## Student review
 

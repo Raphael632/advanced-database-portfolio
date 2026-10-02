@@ -1,0 +1,87 @@
+{
+  "checked_at_utc": "2026-10-02T08:50:16.006810+00:00",
+  "python_version": "3.12.14",
+  "sqlite_version": "3.53.1",
+  "openpyxl_version": "3.1.5",
+  "counts": {
+    "publisher": 1,
+    "source_resource": 11,
+    "publication": 12,
+    "item": 43,
+    "geography": 7,
+    "price_observation": 3528,
+    "app_user": 2,
+    "review_task": 0
+  },
+  "monthly": [
+    {
+      "period": "2025-01",
+      "observations": 294
+    },
+    {
+      "period": "2025-02",
+      "observations": 294
+    },
+    {
+      "period": "2025-03",
+      "observations": 294
+    },
+    {
+      "period": "2025-04",
+      "observations": 294
+    },
+    {
+      "period": "2025-05",
+      "observations": 294
+    },
+    {
+      "period": "2025-06",
+      "observations": 294
+    },
+    {
+      "period": "2025-07",
+      "observations": 294
+    },
+    {
+      "period": "2025-08",
+      "observations": 294
+    },
+    {
+      "period": "2025-09",
+      "observations": 294
+    },
+    {
+      "period": "2025-10",
+      "observations": 294
+    },
+    {
+      "period": "2025-11",
+      "observations": 294
+    },
+    {
+      "period": "2025-12",
+      "observations": 294
+    }
+  ],
+  "source_cells_reconciled": 3528,
+  "integrity_check": "ok",
+  "foreign_key_violations": 0,
+  "price_rounding": "NGN to integer kobo using decimal ROUND_HALF_UP",
+  "synthetic_prices": 0,
+  "workflow_users": "2 explicitly fictional demo accounts",
+  "warnings": [
+    {
+      "period": "2025-03",
+      "issue": "Stale worksheet title; period taken from current-month column header",
+      "source_sheet": "Selected Food Dec 2024"
+    },
+    {
+      "period": "2025-04",
+      "issue": "Stale worksheet title; period taken from current-month column header",
+      "source_sheet": "Selected Food Dec 2024"
+    },
+    {
+      "issue": "National Smoked fish (Mackerel) and zonal Smoked fish kept as separate item labels; equivalence not established"
+    }
+  ]
+}
