@@ -1,0 +1,727 @@
+{
+  "run_id": "20261003T220409895229Z",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "source_sha256_before": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "source_sha256_after": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "runner_sha256": "835886671d42c369f41f41bfa5ca3e2ea2445b8737ce5cac1cead9330ff848cf",
+  "settings": {
+    "journal_mode": "wal",
+    "synchronous": 2,
+    "foreign_keys": 1,
+    "read_uncommitted": 0,
+    "busy_timeout": 0
+  },
+  "scheduling": "Deterministically interleaved independent connections in one process; no threads or sleeps",
+  "workflow_data": "Nine fictional DEMO tasks attached to existing observations in a local-only copy",
+  "checks": {
+    "integrity": "ok",
+    "foreign_keys": "ok",
+    "source_unchanged": true,
+    "passed_cases": 9
+  },
+  "cases": [
+    {
+      "case": "T01_commit_and_reopen",
+      "steps": [
+        {
+          "event": "Before commit",
+          "writer": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: checked provenance"
+          },
+          "other_reader": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          }
+        },
+        {
+          "event": "Committed row visible on new connection",
+          "row": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: checked provenance"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: checked provenance', status='in_review', version=version+1 WHERE task_id=1"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: checked provenance', status='in_review', version=version+1 WHERE task_id=1"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "C_reopened",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        },
+        {
+          "connection": "C_reopened",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=1"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T02_atomic_rollback_on_constraint_failure",
+      "steps": [
+        {
+          "event": "Expected database error",
+          "code": 275,
+          "name": "SQLITE_CONSTRAINT_CHECK",
+          "message": "CHECK constraint failed: status IN ('open','in_review','resolved')"
+        },
+        {
+          "event": "Statement failure alone leaves transaction active",
+          "in_transaction": true,
+          "first_operation": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: first operation succeeds"
+          }
+        },
+        {
+          "event": "Explicit rollback restores both tasks",
+          "before": [
+            {
+              "status": "open",
+              "version": 0,
+              "note": "DEMO: initial review"
+            },
+            {
+              "status": "open",
+              "version": 0,
+              "note": "DEMO: initial review"
+            }
+          ],
+          "after": [
+            {
+              "status": "open",
+              "version": 0,
+              "note": "DEMO: initial review"
+            },
+            {
+              "status": "open",
+              "version": 0,
+              "note": "DEMO: initial review"
+            }
+          ]
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=2"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: first operation succeeds', status='in_review', version=version+1 WHERE task_id=2"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: first operation succeeds', status='in_review', version=version+1 WHERE task_id=2"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: invalid second operation', status='invalid_status', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: invalid second operation', status='invalid_status', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=2"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=2"
+        },
+        {
+          "connection": "A",
+          "sql": "ROLLBACK"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=2"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=3"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T03_savepoint_partial_rollback",
+      "steps": [
+        {
+          "event": "Outer edit retained; optional edit undone",
+          "row": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: keep this check"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: keep this check', status='in_review', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: keep this check', status='in_review', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "SAVEPOINT optional_note"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: discard this optional note', status='resolved', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: discard this optional note', status='resolved', version=version+1 WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=3"
+        },
+        {
+          "connection": "A",
+          "sql": "ROLLBACK TO optional_note"
+        },
+        {
+          "connection": "A",
+          "sql": "RELEASE optional_note"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=3"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=3"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T04_stale_form_overwrite_without_guard",
+      "steps": [
+        {
+          "event": "Both forms loaded outside a long transaction",
+          "A": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          },
+          "B": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          }
+        },
+        {
+          "event": "Unsafe stale form overwrote A despite version-increment trigger",
+          "row": {
+            "status": "resolved",
+            "version": 2,
+            "note": "DEMO: B stale form replaces A note"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=4"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=4"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A checked source header', status='in_review', version=version+1 WHERE task_id=4"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A checked source header', status='in_review', version=version+1 WHERE task_id=4"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B stale form replaces A note', status='resolved', version=version+1 WHERE task_id=4"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B stale form replaces A note', status='resolved', version=version+1 WHERE task_id=4"
+        },
+        {
+          "connection": "B",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=4"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=4"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=4"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T05_optimistic_version_guard",
+      "steps": [
+        {
+          "event": "Stale B edit rejected with zero affected rows",
+          "accepted": false,
+          "row": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: A approved provenance"
+          }
+        },
+        {
+          "event": "B refreshes, reconciles and submits a new edit",
+          "row": {
+            "status": "resolved",
+            "version": 2,
+            "note": "DEMO: A approved provenance; B checked label"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A approved provenance', status='in_review', version=version+1 WHERE task_id=5 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A approved provenance', status='in_review', version=version+1 WHERE task_id=5 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: stale B note', status='resolved', version=version+1 WHERE task_id=5 AND version=0"
+        },
+        {
+          "connection": "B",
+          "sql": "ROLLBACK"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: A approved provenance; B checked label', status='resolved', version=version+1 WHERE task_id=5 AND version=1"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: A approved provenance; B checked label', status='resolved', version=version+1 WHERE task_id=5 AND version=1"
+        },
+        {
+          "connection": "B",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=5"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T06_WAL_reader_snapshot",
+      "steps": [
+        {
+          "event": "B committed but existing A snapshot is stable",
+          "before": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          },
+          "during": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          }
+        },
+        {
+          "event": "After ending read transaction A sees new commit",
+          "row": {
+            "status": "in_review",
+            "version": 1,
+            "note": "DEMO: B committed while A reads"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "BEGIN"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=6"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B committed while A reads', status='in_review', version=version+1 WHERE task_id=6 AND version=0"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B committed while A reads', status='in_review', version=version+1 WHERE task_id=6 AND version=0"
+        },
+        {
+          "connection": "B",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=6"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=6"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T07_stale_snapshot_write_upgrade",
+      "steps": [
+        {
+          "event": "Expected database error",
+          "code": 517,
+          "name": "SQLITE_BUSY_SNAPSHOT",
+          "message": "database is locked"
+        },
+        {
+          "event": "Rollback, refresh and reconsider before new transaction",
+          "row": {
+            "status": "resolved",
+            "version": 2,
+            "note": "DEMO: B accepted edit; A reconciled after refresh"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "BEGIN"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=7"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B accepted edit', status='in_review', version=version+1 WHERE task_id=7 AND version=0"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B accepted edit', status='in_review', version=version+1 WHERE task_id=7 AND version=0"
+        },
+        {
+          "connection": "B",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: stale snapshot edit', status='resolved', version=version+1 WHERE task_id=7 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "ROLLBACK"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=7"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: B accepted edit; A reconciled after refresh', status='resolved', version=version+1 WHERE task_id=7 AND version=1"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: B accepted edit; A reconciled after refresh', status='resolved', version=version+1 WHERE task_id=7 AND version=1"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=7"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T08_single_writer_contention",
+      "steps": [
+        {
+          "event": "Expected database error",
+          "code": 5,
+          "name": "SQLITE_BUSY",
+          "message": "database is locked"
+        },
+        {
+          "event": "B succeeds after A commits and B rereads",
+          "row": {
+            "status": "resolved",
+            "version": 2,
+            "note": "DEMO: B edit after writer released"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A holds writer transaction', status='in_review', version=version+1 WHERE task_id=8"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: A holds writer transaction', status='in_review', version=version+1 WHERE task_id=8"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=8"
+        },
+        {
+          "connection": "A",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=8"
+        },
+        {
+          "connection": "B",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B edit after writer released', status='resolved', version=version+1 WHERE task_id=8 AND version=1"
+        },
+        {
+          "connection": "B",
+          "sql": "UPDATE review_task SET note='DEMO: B edit after writer released', status='resolved', version=version+1 WHERE task_id=8 AND version=1"
+        },
+        {
+          "connection": "B",
+          "sql": "COMMIT"
+        },
+        {
+          "connection": "A",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=8"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "T09_error_cleanup_and_constraints",
+      "steps": [
+        {
+          "event": "Expected database error",
+          "code": 1811,
+          "name": "SQLITE_CONSTRAINT_TRIGGER",
+          "message": "A task update must increment version by exactly one"
+        },
+        {
+          "event": "Expected database error",
+          "code": 787,
+          "name": "SQLITE_CONSTRAINT_FOREIGNKEY",
+          "message": "FOREIGN KEY constraint failed"
+        },
+        {
+          "event": "Invalid edits left no transaction or partial change",
+          "row": {
+            "status": "open",
+            "version": 0,
+            "note": "DEMO: initial review"
+          }
+        }
+      ],
+      "sql_trace": [
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: forbidden no-version edit' WHERE task_id=9"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: forbidden no-version edit' WHERE task_id=9"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: forbidden no-version edit' WHERE task_id=9"
+        },
+        {
+          "connection": "A",
+          "sql": "INSERT INTO review_task(observation_id,assigned_user_id) VALUES(-1,1)"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: invalid helper edit', status='invalid_status', version=version+1 WHERE task_id=9 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: invalid helper edit', status='invalid_status', version=version+1 WHERE task_id=9 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "ROLLBACK"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=9"
+        },
+        {
+          "connection": "A",
+          "sql": "BEGIN IMMEDIATE"
+        },
+        {
+          "connection": "A",
+          "sql": "UPDATE review_task SET note='DEMO: missing task', status='resolved', version=version+1 WHERE task_id=-1 AND version=0"
+        },
+        {
+          "connection": "A",
+          "sql": "ROLLBACK"
+        },
+        {
+          "connection": "B",
+          "sql": "SELECT status,version,note FROM review_task WHERE task_id=9"
+        }
+      ],
+      "passed": true
+    }
+  ]
+}
