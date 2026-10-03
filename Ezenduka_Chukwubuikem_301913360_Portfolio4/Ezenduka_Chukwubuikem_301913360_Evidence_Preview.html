@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Portfolio 4 — Document Database</title>
+<style>body{max-width:1040px;margin:40px auto;padding:0 22px;font:17px/1.6 system-ui;color:#183048;background:#f5f8fc}section{background:white;padding:24px;border:1px solid #d5dfeb;border-radius:12px;margin:20px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}</style>
+<h1>Portfolio 4: document database</h1><p>Ezenduka Chukwubuikem · 301913360 · Nigeria Food Price Observatory</p>
+<section><h2>Model structure</h2><pre>Portfolio 1 relational data (read-only)
+       ↓ group by month + exact item label
+TinyDB monthly_items
+  ├─ identity: document_key, schema_version
+  ├─ period + item label
+  ├─ publication provenance
+  └─ observations[]: geography, level, integer kobo, source cell
+
+TinyDB demo_reviews → document_key reference
+  └─ fictional note, status, optional checklist</pre></section><section><h2>Verified query results</h2><p>Run 20261003T223205428931Z</p><table><tr><th>Query</th><th>Documents</th><th>SQL check</th></tr><tr><td>D01_December_focus</td><td>1</td><td>PASS</td></tr><tr><td>D02_December_with_national</td><td>42</td><td>PASS</td></tr><tr><td>D03_without_national</td><td>12</td><td>PASS</td></tr><tr><td>D04_without_zones</td><td>12</td><td>PASS</td></tr><tr><td>D05_national_at_least_100000_kobo</td><td>453</td><td>PASS</td></tr><tr><td>D06_focus_all_months</td><td>12</td><td>PASS</td></tr></table><p>516 documents preserve all 3528 source observations and provenance fields.</p></section><section><h2>Fictional document example — not NBS prices</h2><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;document_key&quot;: &quot;056c8edcbfbcbd474e40a9d2151954b13dfbba94559ab24ae5b220c827b4b0ea&quot;,
+  &quot;period&quot;: &quot;2099-01&quot;,
+  &quot;item&quot;: {
+    &quot;label&quot;: &quot;Fictional training item&quot;
+  },
+  &quot;provenance&quot;: {
+    &quot;publisher&quot;: &quot;FICTIONAL TRAINING FIXTURE - NOT NBS&quot;,
+    &quot;resource_id&quot;: 1,
+    &quot;download_url&quot;: &quot;https://example.invalid/fictional&quot;,
+    &quot;resource_sha256&quot;: &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,
+    &quot;workbook_name&quot;: &quot;fictional.xlsx&quot;,
+    &quot;workbook_sha256&quot;: &quot;bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&quot;
+  },
+  &quot;observations&quot;: [
+    {
+      &quot;observation_id&quot;: 1,
+      &quot;geography&quot;: &quot;Nigeria&quot;,
+      &quot;level&quot;: &quot;national&quot;,
+      &quot;price_kobo&quot;: 10000,
+      &quot;source_sheet&quot;: &quot;Fictional&quot;,
+      &quot;source_cell&quot;: &quot;B2&quot;
+    },
+    {
+      &quot;observation_id&quot;: 2,
+      &quot;geography&quot;: &quot;NORTH CENTRAL&quot;,
+      &quot;level&quot;: &quot;zone&quot;,
+      &quot;price_kobo&quot;: 20000,
+      &quot;source_sheet&quot;: &quot;Fictional&quot;,
+      &quot;source_cell&quot;: &quot;C2&quot;
+    }
+  ]
+}</pre></section><section><h2>Single-writer CRUD evidence</h2><pre>{
+  &quot;created&quot;: {
+    &quot;document_key&quot;: &quot;9b23b58734dc9c2ad76d9ffc9c862cb1e9655b24c06fdefe7c28a26a691ba51a&quot;,
+    &quot;status&quot;: &quot;open&quot;,
+    &quot;note&quot;: &quot;DEMO: inspect this monthly item&quot;,
+    &quot;is_demo&quot;: true
+  },
+  &quot;updated&quot;: {
+    &quot;document_key&quot;: &quot;9b23b58734dc9c2ad76d9ffc9c862cb1e9655b24c06fdefe7c28a26a691ba51a&quot;,
+    &quot;status&quot;: &quot;resolved&quot;,
+    &quot;note&quot;: &quot;DEMO: illustrative local review complete&quot;,
+    &quot;is_demo&quot;: true,
+    &quot;checks&quot;: [
+      &quot;provenance&quot;,
+      &quot;regional coverage&quot;
+    ]
+  },
+  &quot;temporary_draft_deleted&quot;: true,
+  &quot;persisted_after_reopen&quot;: true,
+  &quot;snapshot_unchanged&quot;: true
+}</pre></section><p>This is an actual embedded NoSQL implementation. It does not provide production concurrency, native indexes or ACID guarantees.</p></html>

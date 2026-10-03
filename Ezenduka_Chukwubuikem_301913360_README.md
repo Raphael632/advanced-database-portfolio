@@ -19,7 +19,7 @@ The system will import monthly published averages, preserve their provenance, co
 | 1 | Design, ER diagram, schema, constraints, normalisation and executed validation | Implemented and tested; student review pending |
 | 2 | SQL results, query plans, indexing and measured performance | Implemented and tested; student review pending |
 | 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student review pending |
-| 4 | Implemented NoSQL model of the same case study | Not started |
+| 4 | Implemented NoSQL model of the same case study | Implemented and tested; student review pending |
 | 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Not started |
 | Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Not started |
 
@@ -65,6 +65,12 @@ See the [Portfolio 2 guide](Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_
 Nine executed transaction scenarios passed: commit/reopen, complete rollback after a constraint failure, savepoint rollback, stale-form overwrite, optimistic version checking, WAL reader snapshots, stale-snapshot write rejection, writer contention and error cleanup. Two independent connections operate on a disposable copy with fictional review tasks. The source database remains unchanged.
 
 See the [Portfolio 3 guide](Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_Chukwubuikem_301913360_Portfolio3_README.md), [analysis](Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_Chukwubuikem_301913360_Transaction_Analysis.md) and [visual evidence viewer](Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html). The viewer opens locally in a browser; Markdown output is also included for GitHub.
+
+## Portfolio 4 results
+
+The TinyDB document model stores 516 item/month documents and preserves all 3,528 observations and their provenance. Six document queries match independent SQL references. Fictional review CRUD and persistence checks pass, as do twelve semantic tests. This is a single-writer local projection; it does not replace the relational concurrency controls.
+
+See the [Portfolio 4 guide](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_Portfolio4_README.md), [document model and analysis](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_NoSQL_Analysis.md), and [visual evidence page](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html). Populated document storage remains local-only.
 
 ## Student review
 

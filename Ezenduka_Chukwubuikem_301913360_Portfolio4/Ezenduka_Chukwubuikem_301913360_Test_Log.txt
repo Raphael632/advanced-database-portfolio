@@ -1,0 +1,17 @@
+test_bad_month_key_and_schema_rejected (__main__.DocumentSemantics.test_bad_month_key_and_schema_rejected) ... ok
+test_crud_persists_without_mutating_snapshot (__main__.DocumentSemantics.test_crud_persists_without_mutating_snapshot) ... ok
+test_distinct_fish_labels_not_merged (__main__.DocumentSemantics.test_distinct_fish_labels_not_merged) ... ok
+test_duplicate_batch_rejected_before_any_write (__main__.DocumentSemantics.test_duplicate_batch_rejected_before_any_write) ... ok
+test_duplicate_geography_and_wrong_level_rejected (__main__.DocumentSemantics.test_duplicate_geography_and_wrong_level_rejected) ... ok
+test_integer_kobo_rejects_bool_float_zero_negative (__main__.DocumentSemantics.test_integer_kobo_rejects_bool_float_zero_negative) ... ok
+test_missing_provenance_rejected (__main__.DocumentSemantics.test_missing_provenance_rejected) ... ok
+test_nested_predicates_match_same_element (__main__.DocumentSemantics.test_nested_predicates_match_same_element) ... ok
+test_observation_reuse_across_documents_rejected (__main__.DocumentSemantics.test_observation_reuse_across_documents_rejected) ... ok
+test_reimport_requires_empty_collection (__main__.DocumentSemantics.test_reimport_requires_empty_collection) ... ok
+test_review_reference_and_status_validation (__main__.DocumentSemantics.test_review_reference_and_status_validation) ... ok
+test_valid_fictional_document_and_key (__main__.DocumentSemantics.test_valid_fictional_document_and_key) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.131s
+
+OK

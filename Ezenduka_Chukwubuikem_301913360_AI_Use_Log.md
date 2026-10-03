@@ -21,6 +21,10 @@ Codex generated eight analytical SQL statements, two covering indexes, benchmark
 
 Codex implemented and executed nine deterministic transaction/concurrency scenarios using independent SQLite connections on a disposable database copy. It generated fictional review tasks, verified commit/rollback/savepoint outcomes, reproduced a stale-form overwrite and demonstrated a version guard, reader snapshots, stale-snapshot rejection, writer contention and exception cleanup. It captured actual outputs and SQL traces, verified the original database hash remained unchanged, and produced the technical explanation and HTML evidence viewer. These automated results are not the student's personal review, and the demonstration notes do not represent actual NBS or student review actions.
 
+## Portfolio 3 inspection and Portfolio 4 assistance — 3 October 2026
+
+Codex reviewed Portfolio 3 and reran its nine transaction scenarios successfully. It then designed and implemented a TinyDB document projection, preserving the source labels and provenance, and reconciled 3,528 observations across 516 persisted documents. Six document queries matched independent SQL references. It implemented fictional review CRUD, ran twelve semantic/persistence tests successfully, and prepared a document diagram, fictional example, actual results, visual evidence page and suitability discussion. TinyDB's single-writer and non-ACID limitations are stated explicitly. The student's personal review has not yet been recorded.
+
 ## Student review
 
 Student review of the implementation has not yet been recorded. Do not claim that the student has tested or understood any specific feature before that review occurs.

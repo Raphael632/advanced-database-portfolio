@@ -8,3 +8,4 @@ __pycache__/
 *.zip
 *.xlsx
 *.bin
+*_LOCAL_ONLY.json

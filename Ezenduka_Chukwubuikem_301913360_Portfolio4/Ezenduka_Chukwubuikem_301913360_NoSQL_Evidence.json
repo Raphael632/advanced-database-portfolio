@@ -1,0 +1,109 @@
+{
+  "run_id": "20261003T223205428931Z",
+  "engine": "TinyDB",
+  "tinydb_version": "4.9.0",
+  "python_version": "3.12.14",
+  "sqlite_reference_version": "3.53.1",
+  "source_sha256_before": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "source_sha256_after": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "runner_sha256": "8e02b34e67a2a82c553c1f1ebe600b2369b0354554e5bf767ba443190db39614",
+  "storage": "JSONStorage; one local writer; cache_size=0",
+  "source_rows": 3528,
+  "documents": 516,
+  "documents_per_month": {
+    "2025-01": 43,
+    "2025-02": 43,
+    "2025-03": 43,
+    "2025-04": 43,
+    "2025-05": 43,
+    "2025-06": 43,
+    "2025-07": 43,
+    "2025-08": 43,
+    "2025-09": 43,
+    "2025-10": 43,
+    "2025-11": 43,
+    "2025-12": 43
+  },
+  "document_sizes": {
+    "1": 12,
+    "6": 12,
+    "7": 492
+  },
+  "flattened_source_sha256": "35de91e5e35f9f9766c1eba5e3ce1f25f715d8d44417f1465a9718c29423fc9c",
+  "flattened_persisted_sha256": "35de91e5e35f9f9766c1eba5e3ce1f25f715d8d44417f1465a9718c29423fc9c",
+  "all_source_fields_reconciled": true,
+  "queries": {
+    "D01_December_focus": {
+      "matched_documents": 1,
+      "identity_sha256": "c31364feccaed7862f0ac60595d9ef8163d5b33bac1d12051e522593e929cb6f",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE p.period='2025-12' AND i.label=? ORDER BY p.period,i.label",
+      "parameters": [
+        "Rice Local, short-Grained"
+      ]
+    },
+    "D02_December_with_national": {
+      "matched_documents": 42,
+      "identity_sha256": "3244a1d699eabb18ced62af41556fa8ce50208950c7bedb4a86021e7fb0af97e",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE p.period='2025-12' AND g.level='national' ORDER BY p.period,i.label",
+      "parameters": []
+    },
+    "D03_without_national": {
+      "matched_documents": 12,
+      "identity_sha256": "b1f01e9eaf6459939369365a72a8af1febb9cc3eec2c7c39f8b39dbcf14a601c",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE NOT EXISTS (SELECT 1 FROM price_observation x JOIN geography gx USING(geography_id) WHERE x.publication_id=o.publication_id AND x.item_id=o.item_id AND gx.level='national') ORDER BY p.period,i.label",
+      "parameters": []
+    },
+    "D04_without_zones": {
+      "matched_documents": 12,
+      "identity_sha256": "fc24cad8b7d180de7b6ed39cb1967a40c58ebfc2f78aa2551d1f914c33e2c39d",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE NOT EXISTS (SELECT 1 FROM price_observation x JOIN geography gx USING(geography_id) WHERE x.publication_id=o.publication_id AND x.item_id=o.item_id AND gx.level='zone') ORDER BY p.period,i.label",
+      "parameters": []
+    },
+    "D05_national_at_least_100000_kobo": {
+      "matched_documents": 453,
+      "identity_sha256": "84a4e9e865fcbfcb34db1356f6cb8af01f7f882a28b28ed6fed257bde2e50e3b",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE g.name='Nigeria' AND o.price_kobo>=100000 ORDER BY p.period,i.label",
+      "parameters": []
+    },
+    "D06_focus_all_months": {
+      "matched_documents": 12,
+      "identity_sha256": "f623508e01e45f0882c5113249f60dc75e4644ac6c4a6a04fd3c0369dca3e6d6",
+      "sqlite_reference_matched": true,
+      "reference_sql": "SELECT DISTINCT p.period,i.label FROM price_observation o JOIN publication p USING(publication_id) JOIN item i USING(item_id) JOIN geography g USING(geography_id) WHERE i.label=? ORDER BY p.period,i.label",
+      "parameters": [
+        "Rice Local, short-Grained"
+      ]
+    }
+  },
+  "demo_crud": {
+    "created": {
+      "document_key": "9b23b58734dc9c2ad76d9ffc9c862cb1e9655b24c06fdefe7c28a26a691ba51a",
+      "status": "open",
+      "note": "DEMO: inspect this monthly item",
+      "is_demo": true
+    },
+    "updated": {
+      "document_key": "9b23b58734dc9c2ad76d9ffc9c862cb1e9655b24c06fdefe7c28a26a691ba51a",
+      "status": "resolved",
+      "note": "DEMO: illustrative local review complete",
+      "is_demo": true,
+      "checks": [
+        "provenance",
+        "regional coverage"
+      ]
+    },
+    "temporary_draft_deleted": true,
+    "persisted_after_reopen": true,
+    "snapshot_unchanged": true
+  },
+  "limitations": [
+    "No ACID or multi-client safety claim",
+    "No native indexes or foreign-key enforcement",
+    "Schema, uniqueness and references are checked by application code only"
+  ]
+}
