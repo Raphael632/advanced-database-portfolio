@@ -34,4 +34,4 @@ Importer tests check month parsing from the current-period header, malformed hea
 - `Ezenduka_Chukwubuikem_301913360_Schema.sql`: executed relational schema.
 - `Ezenduka_Chukwubuikem_301913360_ER_Diagram.png`: diagram checked against the schema and visually inspected.
 
-No complete source tables or populated database are included in Git or this report. Source and database reconstruction is documented in the student-prefixed README. The original local commits were published to the private GitHub repository on 2 October 2026 with their commit IDs preserved. Student review remains pending. Query optimisation, two-connection concurrency, NoSQL and distributed/cloud work remain separate future phases.
+No complete source tables or populated database are included in Git or this report. Source and database reconstruction is documented in the student-prefixed README. The original local commits were published to the private GitHub repository on 2 October 2026 with their commit IDs preserved. Student review remains pending. Query optimisation is now documented separately in Portfolio 2; two-connection concurrency, NoSQL and distributed/cloud work remain future phases.

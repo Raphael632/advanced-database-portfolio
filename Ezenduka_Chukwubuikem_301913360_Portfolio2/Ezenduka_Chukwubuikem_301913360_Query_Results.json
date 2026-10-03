@@ -1,0 +1,703 @@
+{
+  "Q01_COVERAGE": {
+    "columns": [
+      "period",
+      "observations",
+      "distinct_labels",
+      "national_observations",
+      "zonal_observations"
+    ],
+    "rows": [
+      {
+        "period": "2025-01",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-02",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-03",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-04",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-05",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-06",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-07",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-08",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-09",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-10",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-11",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      },
+      {
+        "period": "2025-12",
+        "observations": 294,
+        "distinct_labels": 43,
+        "national_observations": 42,
+        "zonal_observations": 252
+      }
+    ]
+  },
+  "Q02_ITEM_AVAILABILITY": {
+    "columns": [
+      "item",
+      "months",
+      "national_observations",
+      "zonal_observations"
+    ],
+    "rows": [
+      {
+        "item": "Agric hen eggs",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Agric hen eggs, (a Crate of 30 pieces)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Beans Brown",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Beans white",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Beef Boneless",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Bread (sliced), 450g",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Bread (unsliced), 450g",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Carrots, fresh",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Cat fresh fish",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Chicken Wings",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Chicken feet",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Chicken meat (Frozen)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Cray fish small white",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Dried fish, Bonga",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Garri Yellow",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Garri white",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Ginger, fresh",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Goat Meat Bone in",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Groundnut oil, 75cl",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Groundnuts, roasted,75cl bottle",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Irish Potatoe",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Local Rice (Broken)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Mackerel, Frozen",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Maize (Corn) Grains (White) sold loose",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Onions, fresh",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Palm oil, 75cl",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Plantain (ripe)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Plantain (unripe)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Rice Local, short-Grained",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Rice Long-Grained (Imported)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Semovita, Prepacked (1kg)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Smoked fish",
+        "months": 12,
+        "national_observations": 0,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Smoked fish (Mackerel)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 0
+      },
+      {
+        "item": "Sweet potatoes",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Tilapia fresh fish (Epiya)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Tin Milk-Evaporated, Peak Milk, 150g",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Tin Milk-Evaporated, Three Crown Milk, 160g",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Titus, frozen",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Tomatoes, fresh",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Vegetable Oil, 75cl",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Watermelon whole, medium size fresh",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Wheat Flour, Prepacked (2kg)",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      },
+      {
+        "item": "Yam Tuber",
+        "months": 12,
+        "national_observations": 12,
+        "zonal_observations": 72
+      }
+    ]
+  },
+  "Q03_MONTHLY_CHANGE": {
+    "columns": [
+      "period",
+      "preceding_month",
+      "change_percent"
+    ],
+    "rows": [
+      {
+        "period": "2025-02",
+        "preceding_month": "2025-01",
+        "change_percent": 1.01
+      },
+      {
+        "period": "2025-03",
+        "preceding_month": "2025-02",
+        "change_percent": 7.36
+      },
+      {
+        "period": "2025-04",
+        "preceding_month": "2025-03",
+        "change_percent": -4.4
+      },
+      {
+        "period": "2025-05",
+        "preceding_month": "2025-04",
+        "change_percent": -2.27
+      },
+      {
+        "period": "2025-06",
+        "preceding_month": "2025-05",
+        "change_percent": -0.54
+      },
+      {
+        "period": "2025-07",
+        "preceding_month": "2025-06",
+        "change_percent": -0.96
+      },
+      {
+        "period": "2025-08",
+        "preceding_month": "2025-07",
+        "change_percent": -4.85
+      },
+      {
+        "period": "2025-09",
+        "preceding_month": "2025-08",
+        "change_percent": -0.56
+      },
+      {
+        "period": "2025-10",
+        "preceding_month": "2025-09",
+        "change_percent": -2.01
+      },
+      {
+        "period": "2025-11",
+        "preceding_month": "2025-10",
+        "change_percent": -2.71
+      },
+      {
+        "period": "2025-12",
+        "preceding_month": "2025-11",
+        "change_percent": -0.91
+      }
+    ]
+  },
+  "Q04_REGIONAL_SPREAD": {
+    "columns": [
+      "period",
+      "zones_observed",
+      "spread_percent"
+    ],
+    "rows": [
+      {
+        "period": "2025-01",
+        "zones_observed": 6,
+        "spread_percent": 16.34
+      },
+      {
+        "period": "2025-02",
+        "zones_observed": 6,
+        "spread_percent": 10.19
+      },
+      {
+        "period": "2025-03",
+        "zones_observed": 6,
+        "spread_percent": 10.72
+      },
+      {
+        "period": "2025-04",
+        "zones_observed": 6,
+        "spread_percent": 14.19
+      },
+      {
+        "period": "2025-05",
+        "zones_observed": 6,
+        "spread_percent": 15.37
+      },
+      {
+        "period": "2025-06",
+        "zones_observed": 6,
+        "spread_percent": 15.52
+      },
+      {
+        "period": "2025-07",
+        "zones_observed": 6,
+        "spread_percent": 17.72
+      },
+      {
+        "period": "2025-08",
+        "zones_observed": 6,
+        "spread_percent": 11.37
+      },
+      {
+        "period": "2025-09",
+        "zones_observed": 6,
+        "spread_percent": 10.5
+      },
+      {
+        "period": "2025-10",
+        "zones_observed": 6,
+        "spread_percent": 12.11
+      },
+      {
+        "period": "2025-11",
+        "zones_observed": 6,
+        "spread_percent": 25.55
+      },
+      {
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 23.11
+      }
+    ]
+  },
+  "Q05_REGIONAL_RANKING": {
+    "columns": [
+      "period",
+      "zone",
+      "price_rank",
+      "premium_to_national_percent"
+    ],
+    "rows": [
+      {
+        "period": "2025-12",
+        "zone": "NORTH CENTRAL",
+        "price_rank": 1,
+        "premium_to_national_percent": 9.19
+      },
+      {
+        "period": "2025-12",
+        "zone": "SOUTH WEST",
+        "price_rank": 2,
+        "premium_to_national_percent": 5.11
+      },
+      {
+        "period": "2025-12",
+        "zone": "SOUTH EAST",
+        "price_rank": 3,
+        "premium_to_national_percent": 1.84
+      },
+      {
+        "period": "2025-12",
+        "zone": "SOUTH SOUTH",
+        "price_rank": 4,
+        "premium_to_national_percent": -0.75
+      },
+      {
+        "period": "2025-12",
+        "zone": "NORTH WEST",
+        "price_rank": 5,
+        "premium_to_national_percent": -4.56
+      },
+      {
+        "period": "2025-12",
+        "zone": "NORTH EAST",
+        "price_rank": 6,
+        "premium_to_national_percent": -11.3
+      }
+    ]
+  },
+  "Q06_PERIOD_CHANGE_RANKING": {
+    "columns": [
+      "item",
+      "start_period",
+      "end_period",
+      "change_percent"
+    ],
+    "rows": [
+      {
+        "item": "Cray fish small white",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 37.88
+      },
+      {
+        "item": "Ginger, fresh",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 27.46
+      },
+      {
+        "item": "Chicken feet",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 20.14
+      },
+      {
+        "item": "Dried fish, Bonga",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 18.13
+      },
+      {
+        "item": "Smoked fish (Mackerel)",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 16.25
+      },
+      {
+        "item": "Cat fresh fish",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 16.1
+      },
+      {
+        "item": "Titus, frozen",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 15.98
+      },
+      {
+        "item": "Tilapia fresh fish (Epiya)",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 15.4
+      },
+      {
+        "item": "Chicken Wings",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 15.04
+      },
+      {
+        "item": "Mackerel, Frozen",
+        "start_period": "2025-01",
+        "end_period": "2025-12",
+        "change_percent": 13.31
+      }
+    ]
+  },
+  "Q07_UNMATCHED_LABELS": {
+    "columns": [
+      "item",
+      "level",
+      "observations_without_other_level"
+    ],
+    "rows": [
+      {
+        "item": "Smoked fish",
+        "level": "zone",
+        "observations_without_other_level": 72
+      },
+      {
+        "item": "Smoked fish (Mackerel)",
+        "level": "national",
+        "observations_without_other_level": 12
+      }
+    ]
+  },
+  "Q08_SPREAD_RANKING": {
+    "columns": [
+      "item",
+      "period",
+      "zones_observed",
+      "spread_percent"
+    ],
+    "rows": [
+      {
+        "item": "Beans white",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 128.3
+      },
+      {
+        "item": "Irish Potatoe",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 122.22
+      },
+      {
+        "item": "Beans Brown",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 120.89
+      },
+      {
+        "item": "Maize (Corn) Grains (White) sold loose",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 106.46
+      },
+      {
+        "item": "Sweet potatoes",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 104.29
+      },
+      {
+        "item": "Onions, fresh",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 99.0
+      },
+      {
+        "item": "Chicken feet",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 85.32
+      },
+      {
+        "item": "Local Rice (Broken)",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 78.46
+      },
+      {
+        "item": "Ginger, fresh",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 75.84
+      },
+      {
+        "item": "Carrots, fresh",
+        "period": "2025-12",
+        "zones_observed": 6,
+        "spread_percent": 75.59
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+test_bound_parameter_does_not_become_sql (__main__.QuerySemantics.test_bound_parameter_does_not_become_sql) ... ok
+test_changes_use_previous_calendar_month_and_real_division (__main__.QuerySemantics.test_changes_use_previous_calendar_month_and_real_division) ... ok
+test_indexes_preserve_all_query_results (__main__.QuerySemantics.test_indexes_preserve_all_query_results) ... ok
+test_missing_month_is_not_bridged (__main__.QuerySemantics.test_missing_month_is_not_bridged) ... ok
+test_missing_sixth_zone_is_not_reported_as_complete_spread (__main__.QuerySemantics.test_missing_sixth_zone_is_not_reported_as_complete_spread) ... ok
+test_period_change_ranks_relative_not_absolute_increase (__main__.QuerySemantics.test_period_change_ranks_relative_not_absolute_increase) ... ok
+test_query_only_connections_reject_writes (__main__.QuerySemantics.test_query_only_connections_reject_writes) ... ok
+test_rank_ties_and_exclusion_of_national_row (__main__.QuerySemantics.test_rank_ties_and_exclusion_of_national_row) ... ok
+test_rewrite_equivalence_requires_canonical_integer_text (__main__.QuerySemantics.test_rewrite_equivalence_requires_canonical_integer_text) ... ok
+test_smoked_fish_labels_remain_unmatched (__main__.QuerySemantics.test_smoked_fish_labels_remain_unmatched) ... ok
+test_spread_denominator_is_minimum_of_same_item (__main__.QuerySemantics.test_spread_denominator_is_minimum_of_same_item) ... ok
+test_top_price_ties_have_deterministic_order (__main__.QuerySemantics.test_top_price_ties_have_deterministic_order) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.035s
+
+OK

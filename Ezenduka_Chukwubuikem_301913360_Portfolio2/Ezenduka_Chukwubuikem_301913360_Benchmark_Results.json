@@ -1,0 +1,746 @@
+{
+  "run_id": "20261003T212336269310Z",
+  "measured_at_utc": "2026-10-03T21:24:05.295223+00:00",
+  "environment": {
+    "python_version": "3.12.14",
+    "sqlite_version": "3.53.1",
+    "os": "Windows 11",
+    "machine": "AMD64",
+    "logical_cpus": 4,
+    "sqlite_compile_options": [
+      "ATOMIC_INTRINSICS=0",
+      "COMPILER=msvc-1944",
+      "DEFAULT_AUTOVACUUM",
+      "DEFAULT_CACHE_SIZE=-2000",
+      "DEFAULT_FILE_FORMAT=4",
+      "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+      "DEFAULT_MMAP_SIZE=0",
+      "DEFAULT_PAGE_SIZE=4096",
+      "DEFAULT_PCACHE_INITSZ=20",
+      "DEFAULT_RECURSIVE_TRIGGERS",
+      "DEFAULT_SECTOR_SIZE=4096",
+      "DEFAULT_SYNCHRONOUS=2",
+      "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+      "DEFAULT_WAL_SYNCHRONOUS=2",
+      "DEFAULT_WORKER_THREADS=0",
+      "DIRECT_OVERFLOW_READ",
+      "ENABLE_DBSTAT_VTAB",
+      "ENABLE_FTS3",
+      "ENABLE_FTS3_PARENTHESIS",
+      "ENABLE_FTS4",
+      "ENABLE_FTS5",
+      "ENABLE_GEOPOLY",
+      "ENABLE_MATH_FUNCTIONS",
+      "ENABLE_RTREE",
+      "MALLOC_SOFT_LIMIT=1024",
+      "MAX_ATTACHED=10",
+      "MAX_COLUMN=2000",
+      "MAX_COMPOUND_SELECT=500",
+      "MAX_DEFAULT_PAGE_SIZE=8192",
+      "MAX_EXPR_DEPTH=1000",
+      "MAX_FUNCTION_ARG=1000",
+      "MAX_LENGTH=1000000000",
+      "MAX_LIKE_PATTERN_LENGTH=50000",
+      "MAX_MMAP_SIZE=0x7fff0000",
+      "MAX_PAGE_COUNT=0xfffffffe",
+      "MAX_PAGE_SIZE=65536",
+      "MAX_SQL_LENGTH=1000000000",
+      "MAX_TRIGGER_DEPTH=1000",
+      "MAX_VARIABLE_NUMBER=32766",
+      "MAX_VDBE_OP=250000000",
+      "MAX_WORKER_THREADS=8",
+      "MUTEX_W32",
+      "OMIT_AUTOINIT",
+      "SYSTEM_MALLOC",
+      "TEMP_STORE=1",
+      "THREADSAFE=1"
+    ],
+    "settings": {
+      "cache_size": -8192,
+      "temp_store": 2,
+      "automatic_index": 1,
+      "page_size": 4096,
+      "journal_mode": "delete",
+      "query_only": 1
+    }
+  },
+  "source_database_sha256": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "source_unchanged": true,
+  "source_observations": 3528,
+  "synthetic_observations": 0,
+  "parameters": {
+    "item_id": 29,
+    "item_text": "29",
+    "geography_id": 1,
+    "national_id": 1,
+    "start_period": "2025-01",
+    "end_period": "2025-12",
+    "floor_kobo": 100000,
+    "top_n": 10
+  },
+  "focus_item": "Rice Local, short-Grained",
+  "protocol": {
+    "rounds": 31,
+    "repetitions_per_round_per_side": 200,
+    "warmups_per_side": 20,
+    "alternating_order": true,
+    "cache": "warm",
+    "timing_unit": "microseconds per execute + fetchall",
+    "sample_type": "mean of a batch; quartiles are not individual request latency percentiles",
+    "sqlite_progress_handler_interval": 1
+  },
+  "tuned_index_creation_and_analyze_ms": 765.763,
+  "source_sql_sha256": {
+    "Ezenduka_Chukwubuikem_301913360_Benchmark_Queries.sql": "ea4d978fa18dc6eca567ab707f46b23e2b15041c1c8e7244c056410c60150b4b",
+    "Ezenduka_Chukwubuikem_301913360_Indexes.sql": "e05ec636584275294d99d5d105038fcee03707150f1eeb88526f0fe1084c07ed",
+    "Ezenduka_Chukwubuikem_301913360_Queries.sql": "28fad60844549a1938c6367efc292b6e6903c3fa22fe9e1e252de53d15e3fe0b"
+  },
+  "baseline_storage": {
+    "page_count": 95,
+    "page_size": 4096,
+    "freelist_count": 0,
+    "indexes": [
+      {
+        "name": "sqlite_autoindex_app_user_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_geography_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_item_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_price_observation_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_price_observation_2",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publication_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publication_2",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publisher_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_review_task_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_source_resource_1",
+        "sql": null
+      }
+    ],
+    "index_pages": []
+  },
+  "tuned_storage": {
+    "page_count": 127,
+    "page_size": 4096,
+    "freelist_count": 0,
+    "indexes": [
+      {
+        "name": "idx_p2_price_cover",
+        "sql": "CREATE INDEX idx_p2_price_cover\nON price_observation(item_id, price_kobo DESC, geography_id, publication_id)"
+      },
+      {
+        "name": "idx_p2_series_cover",
+        "sql": "CREATE INDEX idx_p2_series_cover\nON price_observation(item_id, geography_id, publication_id, price_kobo)"
+      },
+      {
+        "name": "sqlite_autoindex_app_user_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_geography_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_item_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_price_observation_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_price_observation_2",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publication_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publication_2",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_publisher_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_review_task_1",
+        "sql": null
+      },
+      {
+        "name": "sqlite_autoindex_source_resource_1",
+        "sql": null
+      }
+    ],
+    "index_pages": [
+      {
+        "name": "idx_p2_price_cover",
+        "pages": 16,
+        "bytes": 65536
+      },
+      {
+        "name": "idx_p2_series_cover",
+        "pages": 16,
+        "bytes": 65536
+      }
+    ]
+  },
+  "analytical_correctness_checks": [
+    {
+      "query": "Q01_COVERAGE",
+      "rows_checked": 12,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q02_ITEM_AVAILABILITY",
+      "rows_checked": 43,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q03_MONTHLY_CHANGE",
+      "rows_checked": 11,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q04_REGIONAL_SPREAD",
+      "rows_checked": 12,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q05_REGIONAL_RANKING",
+      "rows_checked": 6,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q06_PERIOD_CHANGE_RANKING",
+      "rows_checked": 10,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q07_UNMATCHED_LABELS",
+      "rows_checked": 2,
+      "python_oracle_passed": true
+    },
+    {
+      "query": "Q08_SPREAD_RANKING",
+      "rows_checked": 10,
+      "python_oracle_passed": true
+    }
+  ],
+  "all_analytical_results_equal": true,
+  "benchmarks": [
+    {
+      "case": "B01_series_lookup",
+      "rows_returned": 12,
+      "ordered_result_sha256": "6a9b6e6b3d4e99ae54a33308c7939259fb9f3c8bc0109640e8f8cc071e6d6e6c",
+      "ordered_results_equal": true,
+      "plans": {
+        "before": [
+          {
+            "id": 4,
+            "parent": 0,
+            "unused": 81,
+            "detail": "SEARCH price_observation USING INDEX sqlite_autoindex_price_observation_1 (ANY(publication_id) AND item_id=? AND geography_id=?)"
+          }
+        ],
+        "after": [
+          {
+            "id": 3,
+            "parent": 0,
+            "unused": 52,
+            "detail": "SEARCH price_observation USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=?)"
+          }
+        ]
+      },
+      "before": {
+        "median_us": 107.612,
+        "q1_us": 105.42699999999999,
+        "q3_us": 116.4295,
+        "min_us": 101.881,
+        "max_us": 155.6375,
+        "round_mean_us": [
+          155.6375,
+          107.706,
+          122.535,
+          106.2435,
+          118.116,
+          102.5795,
+          114.459,
+          107.7155,
+          116.4925,
+          107.612,
+          122.271,
+          107.5795,
+          117.974,
+          105.393,
+          106.033,
+          106.2795,
+          105.6545,
+          102.461,
+          116.9385,
+          107.7975,
+          103.9115,
+          107.7595,
+          124.837,
+          104.413,
+          116.3665,
+          108.1625,
+          105.461,
+          104.2825,
+          105.1625,
+          105.7245,
+          101.881
+        ]
+      },
+      "after": {
+        "median_us": 95.395,
+        "q1_us": 92.944,
+        "q3_us": 97.92525,
+        "min_us": 91.2605,
+        "max_us": 115.7,
+        "round_mean_us": [
+          94.3705,
+          92.609,
+          96.644,
+          95.5855,
+          92.0255,
+          96.46,
+          91.2605,
+          93.239,
+          102.192,
+          93.6645,
+          96.9555,
+          95.4455,
+          92.0995,
+          91.2715,
+          101.7495,
+          93.007,
+          102.197,
+          98.091,
+          115.7,
+          92.881,
+          107.6785,
+          95.395,
+          95.374,
+          97.7595,
+          91.6455,
+          93.44,
+          108.544,
+          96.361,
+          103.726,
+          93.1755,
+          92.774
+        ]
+      },
+      "before_over_after_ratio": 1.1280675087792862,
+      "vm_callbacks_before": 202,
+      "vm_callbacks_after": 72
+    },
+    {
+      "case": "B02_top_prices",
+      "rows_returned": 10,
+      "ordered_result_sha256": "fb55d78e8eebdf3a639b2790c8a289a43cb9f09ca9847558122dca57b0f464d8",
+      "ordered_results_equal": true,
+      "plans": {
+        "before": [
+          {
+            "id": 5,
+            "parent": 0,
+            "unused": 96,
+            "detail": "SEARCH price_observation USING INDEX sqlite_autoindex_price_observation_1 (ANY(publication_id) AND item_id=?)"
+          },
+          {
+            "id": 31,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR ORDER BY"
+          }
+        ],
+        "after": [
+          {
+            "id": 4,
+            "parent": 0,
+            "unused": 57,
+            "detail": "SEARCH price_observation USING COVERING INDEX idx_p2_price_cover (item_id=? AND price_kobo>?)"
+          }
+        ]
+      },
+      "before": {
+        "median_us": 189.9685,
+        "q1_us": 186.848,
+        "q3_us": 201.2265,
+        "min_us": 182.541,
+        "max_us": 247.4645,
+        "round_mean_us": [
+          247.4645,
+          215.7645,
+          194.6105,
+          200.9075,
+          188.476,
+          202.3345,
+          185.495,
+          201.5455,
+          188.3185,
+          208.271,
+          187.415,
+          187.4375,
+          216.6425,
+          200.4835,
+          184.997,
+          207.405,
+          186.669,
+          200.339,
+          187.027,
+          184.495,
+          187.307,
+          199.4425,
+          183.1655,
+          191.61,
+          189.9685,
+          203.3195,
+          184.362,
+          187.604,
+          198.723,
+          183.027,
+          182.541
+        ]
+      },
+      "after": {
+        "median_us": 135.6315,
+        "q1_us": 127.96325,
+        "q3_us": 138.41000000000003,
+        "min_us": 122.2575,
+        "max_us": 153.292,
+        "round_mean_us": [
+          137.1885,
+          124.309,
+          139.9555,
+          127.7315,
+          139.986,
+          127.9385,
+          153.292,
+          133.751,
+          138.2255,
+          133.8195,
+          141.0195,
+          122.5145,
+          137.3795,
+          125.197,
+          129.925,
+          151.384,
+          133.32,
+          127.988,
+          123.9305,
+          135.6315,
+          138.5945,
+          136.2465,
+          138.6685,
+          122.2575,
+          140.3,
+          136.6115,
+          135.5195,
+          130.691,
+          125.0185,
+          135.9855,
+          135.798
+        ]
+      },
+      "before_over_after_ratio": 1.40062227432418,
+      "vm_callbacks_before": 1231,
+      "vm_callbacks_after": 97
+    },
+    {
+      "case": "B03_predicate_rewrite",
+      "rows_returned": 12,
+      "ordered_result_sha256": "6a9b6e6b3d4e99ae54a33308c7939259fb9f3c8bc0109640e8f8cc071e6d6e6c",
+      "ordered_results_equal": true,
+      "plans": {
+        "before": [
+          {
+            "id": 3,
+            "parent": 0,
+            "unused": 111,
+            "detail": "SEARCH price_observation USING COVERING INDEX idx_p2_series_cover (ANY(item_id) AND geography_id=?)"
+          },
+          {
+            "id": 23,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR ORDER BY"
+          }
+        ],
+        "after": [
+          {
+            "id": 3,
+            "parent": 0,
+            "unused": 52,
+            "detail": "SEARCH price_observation USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=?)"
+          }
+        ]
+      },
+      "before": {
+        "median_us": 203.587,
+        "q1_us": 194.46325000000002,
+        "q3_us": 212.78225,
+        "min_us": 186.287,
+        "max_us": 337.647,
+        "round_mean_us": [
+          200.157,
+          194.0465,
+          211.4275,
+          209.4,
+          195.8255,
+          200.5835,
+          193.3155,
+          191.39,
+          194.88,
+          192.3105,
+          337.647,
+          214.137,
+          198.251,
+          204.0625,
+          191.97,
+          203.587,
+          188.028,
+          200.321,
+          186.287,
+          207.5415,
+          218.382,
+          221.427,
+          281.4345,
+          215.136,
+          206.689,
+          219.5345,
+          221.065,
+          209.3845,
+          205.472,
+          201.9875,
+          192.674
+        ]
+      },
+      "after": {
+        "median_us": 95.852,
+        "q1_us": 94.66900000000001,
+        "q3_us": 104.42775,
+        "min_us": 92.1515,
+        "max_us": 149.795,
+        "round_mean_us": [
+          94.129,
+          96.6,
+          98.9555,
+          100.662,
+          93.0175,
+          97.6325,
+          115.5095,
+          96.859,
+          102.338,
+          93.493,
+          149.795,
+          95.3485,
+          96.259,
+          92.1515,
+          94.805,
+          94.1305,
+          95.329,
+          95.818,
+          114.0905,
+          117.371,
+          106.5175,
+          93.4705,
+          121.1115,
+          109.2335,
+          95.852,
+          112.38,
+          95.1835,
+          95.735,
+          94.4565,
+          94.6675,
+          94.6705
+        ]
+      },
+      "before_over_after_ratio": 2.1239723740767014,
+      "vm_callbacks_before": 2984,
+      "vm_callbacks_after": 72
+    },
+    {
+      "case": "B04_coverage_control",
+      "rows_returned": 12,
+      "ordered_result_sha256": "ae3f76131cdb168b152af6d18c2f636ad56fef88e268740b14fe73e13b008292",
+      "ordered_results_equal": true,
+      "plans": {
+        "before": [
+          {
+            "id": 10,
+            "parent": 0,
+            "unused": 48,
+            "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+          },
+          {
+            "id": 12,
+            "parent": 0,
+            "unused": 93,
+            "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+          },
+          {
+            "id": 16,
+            "parent": 0,
+            "unused": 26,
+            "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+          },
+          {
+            "id": 65,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+          },
+          {
+            "id": 68,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR ORDER BY"
+          }
+        ],
+        "after": [
+          {
+            "id": 10,
+            "parent": 0,
+            "unused": 48,
+            "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+          },
+          {
+            "id": 12,
+            "parent": 0,
+            "unused": 93,
+            "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+          },
+          {
+            "id": 16,
+            "parent": 0,
+            "unused": 26,
+            "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+          },
+          {
+            "id": 65,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+          },
+          {
+            "id": 68,
+            "parent": 0,
+            "unused": 0,
+            "detail": "USE TEMP B-TREE FOR ORDER BY"
+          }
+        ]
+      },
+      "before": {
+        "median_us": 1677.869,
+        "q1_us": 1651.24675,
+        "q3_us": 1724.58875,
+        "min_us": 1612.2455,
+        "max_us": 2894.467,
+        "round_mean_us": [
+          1659.2915,
+          1681.0615,
+          1652.762,
+          1664.1345,
+          1677.869,
+          1724.273,
+          1681.483,
+          1673.433,
+          1649.7315,
+          1634.389,
+          1612.2455,
+          1658.753,
+          2037.491,
+          2394.671,
+          1718.7185,
+          1694.753,
+          1688.41,
+          1798.444,
+          1649.1085,
+          1658.2155,
+          1654.8545,
+          1615.8855,
+          1635.5125,
+          1800.5,
+          2894.467,
+          1684.5545,
+          1644.582,
+          1771.726,
+          1769.9895,
+          1724.9045,
+          1621.414
+        ]
+      },
+      "after": {
+        "median_us": 1695.3445,
+        "q1_us": 1651.3115,
+        "q3_us": 1732.828,
+        "min_us": 1616.7335,
+        "max_us": 2206.6215,
+        "round_mean_us": [
+          1926.7205,
+          1889.2725,
+          1648.8425,
+          1669.557,
+          1667.784,
+          1707.009,
+          1703.78,
+          1697.9855,
+          1648.8615,
+          1653.7615,
+          1634.7535,
+          1642.478,
+          2206.6215,
+          1778.4605,
+          1618.608,
+          1629.8525,
+          1643.275,
+          1733.5105,
+          1724.286,
+          1693.051,
+          1679.966,
+          1732.1455,
+          1661.9375,
+          1695.3445,
+          2140.628,
+          2110.4975,
+          1706.5985,
+          1714.989,
+          1616.7335,
+          1690.557,
+          1734.3065
+        ]
+      },
+      "before_over_after_ratio": 0.9896920655359427,
+      "vm_callbacks_before": 79550,
+      "vm_callbacks_after": 79550
+    }
+  ]
+}

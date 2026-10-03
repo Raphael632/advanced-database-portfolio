@@ -1,0 +1,662 @@
+{
+  "Q01_COVERAGE": {
+    "before": [
+      {
+        "id": 10,
+        "parent": 0,
+        "unused": 48,
+        "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+      },
+      {
+        "id": 12,
+        "parent": 0,
+        "unused": 93,
+        "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+      },
+      {
+        "id": 16,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 65,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+      },
+      {
+        "id": 68,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 10,
+        "parent": 0,
+        "unused": 48,
+        "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+      },
+      {
+        "id": 12,
+        "parent": 0,
+        "unused": 93,
+        "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+      },
+      {
+        "id": 16,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 65,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+      },
+      {
+        "id": 68,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q02_ITEM_AVAILABILITY": {
+    "before": [
+      {
+        "id": 12,
+        "parent": 0,
+        "unused": 129,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 87,
+        "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (ANY(publication_id) AND item_id=?)"
+      },
+      {
+        "id": 24,
+        "parent": 0,
+        "unused": 28,
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 27,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 75,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+      },
+      {
+        "id": 78,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 12,
+        "parent": 0,
+        "unused": 129,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 75,
+        "detail": "SEARCH o USING COVERING INDEX idx_p2_price_cover (item_id=?)"
+      },
+      {
+        "id": 18,
+        "parent": 0,
+        "unused": 28,
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 21,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 68,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)"
+      },
+      {
+        "id": 71,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q03_MONTHLY_CHANGE": {
+    "before": [
+      {
+        "id": 9,
+        "parent": 0,
+        "unused": 48,
+        "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+      },
+      {
+        "id": 11,
+        "parent": 0,
+        "unused": 41,
+        "detail": "SEARCH o USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 21,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH previous USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 30,
+        "parent": 0,
+        "unused": 41,
+        "detail": "SEARCH old USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      }
+    ],
+    "after": [
+      {
+        "id": 6,
+        "parent": 0,
+        "unused": 52,
+        "detail": "SEARCH o USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 28,
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 17,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH previous USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 26,
+        "parent": 0,
+        "unused": 38,
+        "detail": "SEARCH old USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=? AND publication_id=?)"
+      },
+      {
+        "id": 48,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q04_REGIONAL_SPREAD": {
+    "before": [
+      {
+        "id": 11,
+        "parent": 0,
+        "unused": 48,
+        "detail": "SCAN p USING COVERING INDEX sqlite_autoindex_publication_1"
+      },
+      {
+        "id": 13,
+        "parent": 0,
+        "unused": 44,
+        "detail": "SCAN g"
+      },
+      {
+        "id": 17,
+        "parent": 0,
+        "unused": 41,
+        "detail": "SEARCH o USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 68,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 10,
+        "parent": 0,
+        "unused": 44,
+        "detail": "SCAN g"
+      },
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 52,
+        "detail": "SEARCH o USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 21,
+        "parent": 0,
+        "unused": 28,
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 24,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR GROUP BY"
+      },
+      {
+        "id": 76,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q05_REGIONAL_RANKING": {
+    "before": [
+      {
+        "id": 2,
+        "parent": 0,
+        "unused": 0,
+        "detail": "CO-ROUTINE ranked"
+      },
+      {
+        "id": 5,
+        "parent": 2,
+        "unused": 0,
+        "detail": "CO-ROUTINE (subquery-3)"
+      },
+      {
+        "id": 15,
+        "parent": 5,
+        "unused": 26,
+        "detail": "SEARCH p USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 21,
+        "parent": 5,
+        "unused": 41,
+        "detail": "SEARCH national USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 34,
+        "parent": 5,
+        "unused": 44,
+        "detail": "SCAN g"
+      },
+      {
+        "id": 38,
+        "parent": 5,
+        "unused": 41,
+        "detail": "SEARCH o USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 66,
+        "parent": 5,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR LAST TERM OF ORDER BY"
+      },
+      {
+        "id": 89,
+        "parent": 2,
+        "unused": 24,
+        "detail": "SCAN (subquery-3)"
+      },
+      {
+        "id": 170,
+        "parent": 0,
+        "unused": 24,
+        "detail": "SCAN ranked"
+      },
+      {
+        "id": 180,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 2,
+        "parent": 0,
+        "unused": 0,
+        "detail": "CO-ROUTINE ranked"
+      },
+      {
+        "id": 5,
+        "parent": 2,
+        "unused": 0,
+        "detail": "CO-ROUTINE (subquery-3)"
+      },
+      {
+        "id": 12,
+        "parent": 5,
+        "unused": 26,
+        "detail": "SEARCH p USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 18,
+        "parent": 5,
+        "unused": 38,
+        "detail": "SEARCH national USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=? AND publication_id=?)"
+      },
+      {
+        "id": 30,
+        "parent": 5,
+        "unused": 44,
+        "detail": "SCAN g"
+      },
+      {
+        "id": 34,
+        "parent": 5,
+        "unused": 38,
+        "detail": "SEARCH o USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=? AND publication_id=?)"
+      },
+      {
+        "id": 63,
+        "parent": 5,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR LAST TERM OF ORDER BY"
+      },
+      {
+        "id": 86,
+        "parent": 2,
+        "unused": 24,
+        "detail": "SCAN (subquery-3)"
+      },
+      {
+        "id": 167,
+        "parent": 0,
+        "unused": 24,
+        "detail": "SCAN ranked"
+      },
+      {
+        "id": 177,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q06_PERIOD_CHANGE_RANKING": {
+    "before": [
+      {
+        "id": 13,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH start USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 19,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH finish USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 25,
+        "parent": 0,
+        "unused": 69,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 27,
+        "parent": 0,
+        "unused": 41,
+        "detail": "SEARCH first USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 36,
+        "parent": 0,
+        "unused": 41,
+        "detail": "SEARCH last USING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 69,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 9,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH start USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 15,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH finish USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 21,
+        "parent": 0,
+        "unused": 69,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 23,
+        "parent": 0,
+        "unused": 38,
+        "detail": "SEARCH first USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=? AND publication_id=?)"
+      },
+      {
+        "id": 31,
+        "parent": 0,
+        "unused": 38,
+        "detail": "SEARCH last USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=? AND publication_id=?)"
+      },
+      {
+        "id": 65,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q07_UNMATCHED_LABELS": {
+    "before": [
+      {
+        "id": 10,
+        "parent": 0,
+        "unused": 69,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 12,
+        "parent": 0,
+        "unused": 87,
+        "detail": "SEARCH o USING COVERING INDEX sqlite_autoindex_price_observation_1 (ANY(publication_id) AND item_id=?)"
+      },
+      {
+        "id": 22,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 26,
+        "parent": 0,
+        "unused": 0,
+        "detail": "CORRELATED SCALAR SUBQUERY 1"
+      },
+      {
+        "id": 31,
+        "parent": 26,
+        "unused": 47,
+        "detail": "SEARCH other USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=?)"
+      },
+      {
+        "id": 37,
+        "parent": 26,
+        "unused": 26,
+        "detail": "SEARCH other_geo USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 48,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR GROUP BY"
+      },
+      {
+        "id": 90,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 9,
+        "parent": 0,
+        "unused": 69,
+        "detail": "SCAN i"
+      },
+      {
+        "id": 11,
+        "parent": 0,
+        "unused": 44,
+        "detail": "SCAN g"
+      },
+      {
+        "id": 13,
+        "parent": 0,
+        "unused": 52,
+        "detail": "SEARCH o USING COVERING INDEX idx_p2_series_cover (item_id=? AND geography_id=?)"
+      },
+      {
+        "id": 19,
+        "parent": 0,
+        "unused": 0,
+        "detail": "CORRELATED SCALAR SUBQUERY 1"
+      },
+      {
+        "id": 24,
+        "parent": 19,
+        "unused": 47,
+        "detail": "SEARCH other USING COVERING INDEX sqlite_autoindex_price_observation_1 (publication_id=? AND item_id=?)"
+      },
+      {
+        "id": 30,
+        "parent": 19,
+        "unused": 26,
+        "detail": "SEARCH other_geo USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 41,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR GROUP BY"
+      },
+      {
+        "id": 83,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  },
+  "Q08_SPREAD_RANKING": {
+    "before": [
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH p USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 20,
+        "parent": 0,
+        "unused": 106,
+        "detail": "SEARCH o USING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+      },
+      {
+        "id": 25,
+        "parent": 0,
+        "unused": 31,
+        "detail": "SEARCH i USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 29,
+        "parent": 0,
+        "unused": 0,
+        "detail": "BLOOM FILTER ON g (geography_id=?)"
+      },
+      {
+        "id": 37,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 44,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR GROUP BY"
+      },
+      {
+        "id": 104,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "after": [
+      {
+        "id": 14,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH p USING COVERING INDEX sqlite_autoindex_publication_1 (period=?)"
+      },
+      {
+        "id": 20,
+        "parent": 0,
+        "unused": 106,
+        "detail": "SEARCH o USING INDEX sqlite_autoindex_price_observation_1 (publication_id=?)"
+      },
+      {
+        "id": 25,
+        "parent": 0,
+        "unused": 31,
+        "detail": "SEARCH i USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 29,
+        "parent": 0,
+        "unused": 0,
+        "detail": "BLOOM FILTER ON g (geography_id=?)"
+      },
+      {
+        "id": 37,
+        "parent": 0,
+        "unused": 26,
+        "detail": "SEARCH g USING INTEGER PRIMARY KEY (rowid=?)"
+      },
+      {
+        "id": 44,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR GROUP BY"
+      },
+      {
+        "id": 104,
+        "parent": 0,
+        "unused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ]
+  }
+}

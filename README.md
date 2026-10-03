@@ -10,7 +10,7 @@ Case study: **Nigeria Food Price Observatory**, a student-designed system using 
 - [Executed verification](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Verification.md)
 - [AI assistance and student review record](Ezenduka_Chukwubuikem_301913360_AI_Use_Log.md)
 
-Portfolio 1 is implemented: 3,528 reconciled source observations and 20 passing tests. Student review is pending. Portfolios 2–5 are not started.
+Portfolio 1 is implemented: 3,528 reconciled source observations and 20 passing tests. [Portfolio 2](Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md) is implemented with eight analytical queries, measured optimisation evidence and twelve passing tests. Student review is pending. Portfolios 3–5 are not started.
 
 Raw NBS downloads and the populated database remain local under the documented source-use restrictions. This repository includes reproducible code and aggregate evidence.
 

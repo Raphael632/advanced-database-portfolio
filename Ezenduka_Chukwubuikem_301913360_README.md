@@ -17,7 +17,7 @@ The system will import monthly published averages, preserve their provenance, co
 | Phase | Required work | Status |
 |---|---|---|
 | 1 | Design, ER diagram, schema, constraints, normalisation and executed validation | Implemented and tested; student review pending |
-| 2 | SQL results, query plans, indexing and measured performance | Not started |
+| 2 | SQL results, query plans, indexing and measured performance | Implemented and tested; student review pending |
 | 3 | Commit, rollback, isolation and concurrent reviewer updates | Not started |
 | 4 | Implemented NoSQL model of the same case study | Not started |
 | 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Not started |
@@ -54,7 +54,13 @@ The `all` Python command downloads the pinned resources into `.local/raw`, verif
 
 The initially executed database on the development computer is held outside the submission folder in the task's `work/portfolio_runtime` directory. Its aggregate verification evidence has been copied into Portfolio 1. The submission can be reproduced independently with the commands above.
 
-## Student review before Phase 2
+## Portfolio 2 results and reproduction
+
+Eight analytical queries produced 106 independently checked result rows. Two covering indexes and a predicate rewrite were measured against documented baselines; twelve semantic tests passed. The recorded speed ratios were 1.13x for a series lookup, 1.40x for a top-price query and 2.12x for the rewrite. The full-coverage control did not improve. The indexes added 128 KiB. These are warm-cache measurements on this small dataset, not production performance claims.
+
+See the [Portfolio 2 guide](Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Portfolio2_README.md) for reproduction commands and the [performance analysis](Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md) for plans, measurements and limitations. The runner preserves the original database and keeps populated benchmark copies local.
+
+## Student review
 
 Read the design document and explain (1) why a price needs the month, item and geography to identify it, (2) why 42 rows per source table produce 43 distinct labels overall, and (3) why a task update needs both a version condition and an increment. Run the tests and record any observations or requested changes in the AI-use log. This review is still pending; the implementation is not a claim of completed personal reflection.
 
