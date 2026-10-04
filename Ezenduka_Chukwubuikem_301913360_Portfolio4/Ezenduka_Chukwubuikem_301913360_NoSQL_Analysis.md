@@ -14,7 +14,12 @@ Recorded run: **20261003T223205428931Z**. The persisted store contains **516 doc
 
 One `monthly_items` document represents **one calendar month and one exact source item label**. Its observations array embeds the national and available zonal values. Each element retains integer kobo, geography, geographic level, original observation ID, source sheet and cell. Provenance is shared at document level because all embedded observations belong to the same source publication.
 
-```mermaid
+![Monthly item document model](Ezenduka_Chukwubuikem_301913360_Document_Model.png)
+
+<details>
+<summary>Editable diagram source</summary>
+
+```text
 flowchart TD
     R[Portfolio 1 relational source] --> G[Group by month and exact item label]
     G --> M[monthly_items: 516 documents]
@@ -26,6 +31,8 @@ flowchart TD
     O --> C[observation_id, source_sheet, source_cell]
     W[demo_reviews: fictional workflow] -->|document_key reference| M
 ```
+
+</details>
 
 | Field | Purpose and rule |
 |---|---|

@@ -25,7 +25,12 @@ WHERE task_id = :task_id AND version = :loaded_version;
 
 The implemented `guarded_edit` function binds parameters, checks the affected count and rolls back on exceptions before propagating them. A missing task also returns false; an interface would reread to distinguish it from a version conflict. Invalid status values remain errors. This is a database demonstration, not an authenticated review application.
 
-```mermaid
+![Review version-check sequence](Ezenduka_Chukwubuikem_301913360_Review_Sequence.png)
+
+<details>
+<summary>Editable diagram source</summary>
+
+```text
 sequenceDiagram
     participant A as Reviewer A
     participant DB as Review database
@@ -40,6 +45,8 @@ sequenceDiagram
     B->>DB: Submit reconciled note WHERE version = 1
     DB-->>B: One row saved, version 2
 ```
+
+</details>
 
 The final edit simulates a consciously reconciled request. An application must not automatically resubmit an old note with a newly fetched version, which would defeat conflict detection.
 

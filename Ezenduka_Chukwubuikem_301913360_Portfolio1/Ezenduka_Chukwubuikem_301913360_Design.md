@@ -37,7 +37,10 @@ The companion ER diagram shows the implemented tables. `PK` means primary key, `
 
 ![Implemented ER diagram](Ezenduka_Chukwubuikem_301913360_ER_Diagram.png)
 
-```mermaid
+<details>
+<summary>Editable diagram source</summary>
+
+```text
 erDiagram
     publisher ||--o{ source_resource : publishes
     source_resource ||--o{ publication : contains
@@ -47,6 +50,8 @@ erDiagram
     price_observation ||--o| review_task : may_have
     app_user ||--o{ review_task : is_assigned
 ```
+
+</details>
 
 ## 4. Relational schema and data dictionary
 
