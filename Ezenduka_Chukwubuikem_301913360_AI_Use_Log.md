@@ -25,6 +25,10 @@ Codex implemented and executed nine deterministic transaction/concurrency scenar
 
 Codex reviewed Portfolio 3 and reran its nine transaction scenarios successfully. It then designed and implemented a TinyDB document projection, preserving the source labels and provenance, and reconciled 3,528 observations across 516 persisted documents. Six document queries matched independent SQL references. It implemented fictional review CRUD, ran twelve semantic/persistence tests successfully, and prepared a document diagram, fictional example, actual results, visual evidence page and suitability discussion. TinyDB's single-writer and non-ACID limitations are stated explicitly. The student's personal review has not yet been recorded.
 
+## Portfolio 5 assistance — 4 October 2026
+
+Codex implemented and executed a local application-level replication exercise with primary/replica SQLite files, transactional review-event logging and replay checkpoints. Eight scenarios verified stale reads, freshness routing, simulated outages, worker-error recovery, backup recovery points and exact reconstruction from two range shards. Ten focused failure/routing tests passed. Codex generated the architecture PNG, evidence viewer and technical discussion, explicitly distinguishing local simulations from a proposed, undeployed cloud design. No cloud resources were created and no real source data were changed or exported. Student review and personal reflection remain pending.
+
 ## Student review
 
 Student review of the implementation has not yet been recorded. Do not claim that the student has tested or understood any specific feature before that review occurs.

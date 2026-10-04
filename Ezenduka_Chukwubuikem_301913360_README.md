@@ -20,7 +20,7 @@ The system will import monthly published averages, preserve their provenance, co
 | 2 | SQL results, query plans, indexing and measured performance | Implemented and tested; student review pending |
 | 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student review pending |
 | 4 | Implemented NoSQL model of the same case study | Implemented and tested; student review pending |
-| 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Not started |
+| 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Local exercise implemented and tested; cloud design proposed; student review pending |
 | Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Not started |
 
 ## Source access and redistribution
@@ -71,6 +71,12 @@ See the [Portfolio 3 guide](Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_
 The TinyDB document model stores 516 item/month documents and preserves all 3,528 observations and their provenance. Six document queries match independent SQL references. Fictional review CRUD and persistence checks pass, as do twelve semantic tests. This is a single-writer local projection; it does not replace the relational concurrency controls.
 
 See the [Portfolio 4 guide](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_Portfolio4_README.md), [document model and analysis](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_NoSQL_Analysis.md), and [visual evidence page](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html). Populated document storage remains local-only.
+
+## Portfolio 5 results
+
+Eight local integration scenarios and ten focused tests passed. The exercise implements primary/replica review-event replay, freshness-aware reads, simulated outage refusal, worker recovery, backup restore and two month-range shards of 1,764 observations each. Their union exactly reproduces the 3,528-row source projection. The report distinguishes these local SQLite files and simulated outages from its proposed cloud architecture; no cloud cluster is deployed.
+
+See the [Portfolio 5 guide](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Portfolio5_README.md), [analysis and architecture](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Distributed_Analysis.md) and [executed evidence](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Distributed_Evidence.md). All five technical phase implementations now have evidence; final documentation, student reflection and submission packaging are still pending.
 
 ## Student review
 

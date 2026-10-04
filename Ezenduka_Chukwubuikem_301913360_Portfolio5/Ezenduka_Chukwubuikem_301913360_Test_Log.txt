@@ -1,0 +1,15 @@
+test_diverged_replica_is_not_overwritten (__main__.ReplicationRules.test_diverged_replica_is_not_overwritten) ... ok
+test_event_insert_failure_rolls_back_task (__main__.ReplicationRules.test_event_insert_failure_rolls_back_task) ... ok
+test_mid_batch_failure_rolls_back_every_event_and_checkpoint (__main__.ReplicationRules.test_mid_batch_failure_rolls_back_every_event_and_checkpoint) ... ok
+test_missing_event_is_detected (__main__.ReplicationRules.test_missing_event_is_detected) ... ok
+test_missing_shard_does_not_create_empty_database (__main__.ReplicationRules.test_missing_shard_does_not_create_empty_database) ... ok
+test_outage_refuses_write_and_strict_read_but_labels_stale_read (__main__.ReplicationRules.test_outage_refuses_write_and_strict_read_but_labels_stale_read) ... ok
+test_repeat_delivery_does_not_duplicate_edits (__main__.ReplicationRules.test_repeat_delivery_does_not_duplicate_edits) ... ok
+test_shard_boundaries_and_invalid_periods (__main__.ReplicationRules.test_shard_boundaries_and_invalid_periods) ... ok
+test_stale_primary_edit_creates_no_event (__main__.ReplicationRules.test_stale_primary_edit_creates_no_event) ... ok
+test_strict_read_routes_to_primary_then_caught_up_replica (__main__.ReplicationRules.test_strict_read_routes_to_primary_then_caught_up_replica) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.043s
+
+OK

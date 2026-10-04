@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Portfolio 5 evidence</title>
+<style>body{max-width:1000px;margin:40px auto;padding:0 22px;font:17px/1.6 system-ui;color:#183048;background:#f5f8fc}section{padding:24px;background:white;border:1px solid #c8d7e5;border-radius:12px;margin:20px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}</style>
+<h1>Portfolio 5: replication, recovery and sharding</h1><p>Local controlled exercise, not a cloud deployment.</p>
+<section><h2>Implemented data flow</h2><pre>Original source (unchanged)
+  → Primary copy + atomic review event log
+      → Explicit replication worker → Replica + applied sequence
+      → Backup at sequence 3 → restored copy
+  → Month-range projection → Jan–Jun shard + Jul–Dec shard</pre></section><section><h2>S01_initial_snapshot</h2><pre>{
+  &quot;case&quot;: &quot;S01_initial_snapshot&quot;,
+  &quot;passed&quot;: true,
+  &quot;primary&quot;: {
+    &quot;version&quot;: 0,
+    &quot;status&quot;: &quot;open&quot;,
+    &quot;note&quot;: &quot;DEMO: initial review&quot;
+  },
+  &quot;replica&quot;: {
+    &quot;version&quot;: 0,
+    &quot;status&quot;: &quot;open&quot;,
+    &quot;note&quot;: &quot;DEMO: initial review&quot;
+  },
+  &quot;checkpoint&quot;: 0
+}</pre></section><section><h2>S02_paused_worker_stale_read</h2><pre>{
+  &quot;case&quot;: &quot;S02_paused_worker_stale_read&quot;,
+  &quot;passed&quot;: true,
+  &quot;acknowledged_sequence&quot;: 2,
+  &quot;pending_events&quot;: 2,
+  &quot;eventual_read&quot;: {
+    &quot;route&quot;: &quot;replica&quot;,
+    &quot;satisfies_minimum&quot;: false,
+    &quot;applied_sequence&quot;: 0,
+    &quot;task&quot;: {
+      &quot;version&quot;: 0,
+      &quot;status&quot;: &quot;open&quot;,
+      &quot;note&quot;: &quot;DEMO: initial review&quot;
+    }
+  },
+  &quot;strict_read&quot;: {
+    &quot;route&quot;: &quot;primary&quot;,
+    &quot;satisfies_minimum&quot;: true,
+    &quot;applied_sequence&quot;: 2,
+    &quot;task&quot;: {
+      &quot;version&quot;: 2,
+      &quot;status&quot;: &quot;in_review&quot;,
+      &quot;note&quot;: &quot;DEMO: label checked&quot;
+    }
+  }
+}</pre></section><section><h2>S03_simulated_primary_outage</h2><pre>{
+  &quot;case&quot;: &quot;S03_simulated_primary_outage&quot;,
+  &quot;passed&quot;: true,
+  &quot;refused&quot;: [
+    {
+      &quot;operation&quot;: &quot;strict_read&quot;,
+      &quot;message&quot;: &quot;Replica is behind required sequence and primary is unavailable&quot;
+    },
+    {
+      &quot;operation&quot;: &quot;write&quot;,
+      &quot;message&quot;: &quot;Primary unavailable: writes are not redirected to the replica&quot;
+    }
+  ],
+  &quot;labelled_stale_read&quot;: {
+    &quot;route&quot;: &quot;replica&quot;,
+    &quot;satisfies_minimum&quot;: false,
+    &quot;applied_sequence&quot;: 0,
+    &quot;task&quot;: {
+      &quot;version&quot;: 0,
+      &quot;status&quot;: &quot;open&quot;,
+      &quot;note&quot;: &quot;DEMO: initial review&quot;
+    }
+  },
+  &quot;replica_promoted&quot;: false
+}</pre></section><section><h2>S04_catch_up_and_repeat</h2><pre>{
+  &quot;case&quot;: &quot;S04_catch_up_and_repeat&quot;,
+  &quot;passed&quot;: true,
+  &quot;applied_events&quot;: 2,
+  &quot;repeat_applied_events&quot;: 0,
+  &quot;checkpoint&quot;: 2,
+  &quot;task&quot;: {
+    &quot;version&quot;: 2,
+    &quot;status&quot;: &quot;in_review&quot;,
+    &quot;note&quot;: &quot;DEMO: label checked&quot;
+  }
+}</pre></section><section><h2>S05_worker_failure_and_retry</h2><pre>{
+  &quot;case&quot;: &quot;S05_worker_failure_and_retry&quot;,
+  &quot;passed&quot;: true,
+  &quot;error&quot;: &quot;Injected worker failure before checkpoint&quot;,
+  &quot;rolled_back_task&quot;: {
+    &quot;version&quot;: 2,
+    &quot;status&quot;: &quot;in_review&quot;,
+    &quot;note&quot;: &quot;DEMO: label checked&quot;
+  },
+  &quot;rolled_back_checkpoint&quot;: 2,
+  &quot;recovered_task&quot;: {
+    &quot;version&quot;: 3,
+    &quot;status&quot;: &quot;in_review&quot;,
+    &quot;note&quot;: &quot;DEMO: reconciled note&quot;
+  },
+  &quot;recovered_checkpoint&quot;: 3
+}</pre></section><section><h2>S06_restore_recovery_point</h2><pre>{
+  &quot;case&quot;: &quot;S06_restore_recovery_point&quot;,
+  &quot;passed&quot;: true,
+  &quot;primary_sequence&quot;: 4,
+  &quot;backup_sequence&quot;: 3,
+  &quot;acknowledged_edits_absent_from_restore&quot;: 1,
+  &quot;restored_task&quot;: {
+    &quot;version&quot;: 3,
+    &quot;status&quot;: &quot;in_review&quot;,
+    &quot;note&quot;: &quot;DEMO: reconciled note&quot;
+  },
+  &quot;restored_source_observations&quot;: 3528
+}</pre></section><section><h2>S07_month_range_shards</h2><pre>{
+  &quot;case&quot;: &quot;S07_month_range_shards&quot;,
+  &quot;passed&quot;: true,
+  &quot;shard_observations&quot;: [
+    1764,
+    1764
+  ],
+  &quot;total_observations&quot;: 3528,
+  &quot;source_projection_sha256&quot;: &quot;0f7b3a980d9a165d301b5e86a6a9655d4fd1a9e74904c24b6266b0f81c18e23d&quot;,
+  &quot;shard_union_sha256&quot;: &quot;0f7b3a980d9a165d301b5e86a6a9655d4fd1a9e74904c24b6266b0f81c18e23d&quot;,
+  &quot;january_route&quot;: 0,
+  &quot;december_route&quot;: 1,
+  &quot;exact_union&quot;: true,
+  &quot;no_overlap&quot;: true
+}</pre></section><section><h2>S08_missing_shard_refusal</h2><pre>{
+  &quot;case&quot;: &quot;S08_missing_shard_refusal&quot;,
+  &quot;passed&quot;: true,
+  &quot;message&quot;: &quot;A required shard is missing: refusing a partial global result&quot;,
+  &quot;partial_result_reported_as_complete&quot;: false
+}</pre></section></html>
