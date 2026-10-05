@@ -1,0 +1,106 @@
+{
+  "audit_id": "20261005T174217548507Z",
+  "checked_at_utc": "2026-10-05T17:43:33.531497+00:00",
+  "commands": [
+    {
+      "check": "portfolio1_unit_tests",
+      "exit_code": 0,
+      "unit_tests": 20,
+      "log_sha256": "cc2ebb567186cc8bd821ce1fb43df78097ea1d5812df174b7a61858d591e83e7"
+    },
+    {
+      "check": "portfolio2_unit_tests",
+      "exit_code": 0,
+      "unit_tests": 12,
+      "log_sha256": "8544cee1ef6d3134a16b44588a8a9e162cbdf4498359aeb4f8659e3f055e7a84"
+    },
+    {
+      "check": "portfolio4_unit_tests",
+      "exit_code": 0,
+      "unit_tests": 12,
+      "log_sha256": "f11e2fbe1698a60f6226355a0805b10799650de45af6d1e0f8ccd4b520ecbc11"
+    },
+    {
+      "check": "portfolio5_unit_tests",
+      "exit_code": 0,
+      "unit_tests": 10,
+      "log_sha256": "2ab7053a55bfcf5fcdee8bd10e7bcc59f74624953e2aaf5c260a132e3431113b"
+    },
+    {
+      "check": "portfolio1_fresh_import",
+      "exit_code": 0,
+      "unit_tests": null,
+      "log_sha256": "0e4d2c9bb6ac217e5cb4b657659d821a9434aa6237882ba656e32bb2c40fc2f5"
+    },
+    {
+      "check": "portfolio2_full_execution",
+      "exit_code": 0,
+      "unit_tests": null,
+      "log_sha256": "eef9be3cabeadb0ae09e7c08ca8479492da36fc5e42eea2447c8050ba088acfb"
+    },
+    {
+      "check": "portfolio3_full_execution",
+      "exit_code": 0,
+      "unit_tests": null,
+      "log_sha256": "53b8a8e29182f36937486b38da01e35f303113a024b748eaecd9192b920b59b7"
+    },
+    {
+      "check": "portfolio4_full_execution",
+      "exit_code": 0,
+      "unit_tests": null,
+      "log_sha256": "62ec99fd96646f342b1d27863d00059f99b12e33b2ac080d79b0b514e27a7c0d"
+    },
+    {
+      "check": "portfolio5_full_execution",
+      "exit_code": 0,
+      "unit_tests": null,
+      "log_sha256": "fc6312d764f42e9c8c4e89ee0179ddc81859b21444fd778f555c933a71bf803d"
+    }
+  ],
+  "unit_tests_passed": 54,
+  "fresh_import_tables_matched": [
+    "publisher",
+    "source_resource",
+    "publication",
+    "item",
+    "geography",
+    "price_observation",
+    "app_user",
+    "review_task"
+  ],
+  "fresh_runs": {
+    "2": {
+      "run_id": "20261005T174246007834Z",
+      "evidence_sha256": "722af0e6ae5ebcdbdcba571f2f4055e64ba5fae2ab2356c49b1efb80cc202fd7",
+      "analytical_rows": 106,
+      "repeat_ratios": {
+        "B01_series_lookup": 1.1282579514012547,
+        "B02_top_prices": 1.3986336629256824,
+        "B03_predicate_rewrite": 1.9863826710451,
+        "B04_coverage_control": 0.987816582705391
+      },
+      "note": "New timing run retained for audit; original dated benchmark remains the report basis."
+    },
+    "3": {
+      "run_id": "20261005T174321762873Z",
+      "evidence_sha256": "e0f47533109a54eae0e00535dfeabd110640b87bcbba9520d84d749c6daeacb3"
+    },
+    "4": {
+      "run_id": "20261005T174324111814Z",
+      "evidence_sha256": "1cb37d2b636e079c5c07504483eb0bbc4e0f7e51f4035b83b849becb1bcb4c8b"
+    },
+    "5": {
+      "run_id": "20261005T174325750086Z",
+      "evidence_sha256": "1e058eaa85cce8ed2ccc71a60e37df0551968e256d35c030883c897aeeb4b5a1"
+    }
+  },
+  "broken_local_links": [],
+  "prohibited_data_files": [],
+  "original_source_unchanged": true,
+  "source_sha256": "a5a7c8939212d9e6bb96ffc90d961e163cc3bf01c87bbeb3123eaab714d38af2",
+  "limitations": [
+    "Automated checks do not certify student authorship or understanding",
+    "No institutional plagiarism/similarity score has been obtained",
+    "No production/cloud/network resilience tests are implied"
+  ]
+}

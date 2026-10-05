@@ -14,4 +14,6 @@ Portfolio 1 is implemented: 3,528 reconciled source observations and 20 passing 
 
 Raw NBS downloads and the populated database remain local under the documented source-use restrictions. This repository includes reproducible code and aggregate evidence.
 
+The [three-page summary draft](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Submission_Summary.pdf) and [final technical/originality review](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Final_Audit.md) were prepared on 5 October 2026. The institutional similarity threshold is not yet verified; the personal reflection and submission checks remain pending.
+
 This conventional repository landing page is separate from the student-prefixed README used in the final named submission package.

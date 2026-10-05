@@ -21,7 +21,7 @@ The system will import monthly published averages, preserve their provenance, co
 | 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student review pending |
 | 4 | Implemented NoSQL model of the same case study | Implemented and tested; student review pending |
 | 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Local exercise implemented and tested; cloud design proposed; student review pending |
-| Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Not started |
+| Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Three-page review draft and final audit prepared; personal reflection and submission checks pending |
 
 ## Source access and redistribution
 
@@ -77,6 +77,10 @@ See the [Portfolio 4 guide](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_
 Eight local integration scenarios and ten focused tests passed. The exercise implements primary/replica review-event replay, freshness-aware reads, simulated outage refusal, worker recovery, backup restore and two month-range shards of 1,764 observations each. Their union exactly reproduces the 3,528-row source projection. The report distinguishes these local SQLite files and simulated outages from its proposed cloud architecture; no cloud cluster is deployed.
 
 See the [Portfolio 5 guide](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Portfolio5_README.md), [analysis and architecture](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Distributed_Analysis.md) and [executed evidence](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Distributed_Evidence.md). All five technical phase implementations now have evidence; final documentation, student reflection and submission packaging are still pending.
+
+## Summary and final audit
+
+The [three-page summary PDF](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Submission_Summary.pdf) and [editable Markdown version](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Submission_Summary.md) are review drafts. The [final audit](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Final_Audit.md) records 54 passing unit tests, fresh execution of all phases, a complete source rebuild and the limitations of the originality review. No institutional similarity percentage is claimed. Personal reflection, accurate student-verification details, assessor access and final packaging must be completed before submission.
 
 ## Student review
 

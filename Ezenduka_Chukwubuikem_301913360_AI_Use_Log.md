@@ -29,6 +29,10 @@ Codex reviewed Portfolio 3 and reran its nine transaction scenarios successfully
 
 Codex implemented and executed a local application-level replication exercise with primary/replica SQLite files, transactional review-event logging and replay checkpoints. Eight scenarios verified stale reads, freshness routing, simulated outages, worker-error recovery, backup recovery points and exact reconstruction from two range shards. Ten focused failure/routing tests passed. Codex generated the architecture PNG, evidence viewer and technical discussion, explicitly distinguishing local simulations from a proposed, undeployed cloud design. No cloud resources were created and no real source data were changed or exported. Student review and personal reflection remain pending.
 
+## Final audit and summary assistance — 5 October 2026
+
+Codex performed a fresh source rebuild, reran 54 unit tests and all five phase executions, checked recorded results and links, and produced audit evidence. It ran a limited exact-phrase comparison against cited official documentation and sampled web searches; no institutional plagiarism score or similarity clearance is claimed. It prepared and visually checked a three-page PDF review draft with references and an AI declaration. The student directed the phased work and provided GitHub organisation and diagram-display feedback. No unverified claim of student code execution is made; the individual reflection and student-verification account must reflect actual actions before submission.
+
 ## Student review
 
 Student review of the implementation has not yet been recorded. Do not claim that the student has tested or understood any specific feature before that review occurs.

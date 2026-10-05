@@ -1,0 +1,228 @@
+FINAL AUDIT 20261005T174217548507Z
+
+=== portfolio1_unit_tests ===
+test_cosmetic_label_cleanup_preserves_meaning (__main__.ImportTests.test_cosmetic_label_cleanup_preserves_meaning) ... ok
+test_invalid_price_is_not_filled_with_zero (__main__.ImportTests.test_invalid_price_is_not_filled_with_zero) ... ok
+test_period_is_taken_from_header (__main__.ImportTests.test_period_is_taken_from_header) ... ok
+test_round_half_up (__main__.ImportTests.test_round_half_up) ... ok
+test_unrecognised_header_rejected (__main__.ImportTests.test_unrecognised_header_rejected) ... ok
+test_duplicate_observation_rejected (__main__.SchemaTests.test_duplicate_observation_rejected) ... ok
+test_duplicate_source_cell_rejected (__main__.SchemaTests.test_duplicate_source_cell_rejected) ... ok
+test_failed_batch_rolls_back (__main__.SchemaTests.test_failed_batch_rolls_back) ... ok
+test_foreign_keys_enabled (__main__.SchemaTests.test_foreign_keys_enabled) ... ok
+test_invalid_geography_rejected (__main__.SchemaTests.test_invalid_geography_rejected) ... ok
+test_invalid_period_rejected (__main__.SchemaTests.test_invalid_period_rejected) ... ok
+test_missing_item_rejected (__main__.SchemaTests.test_missing_item_rejected) ... ok
+test_non_integer_price_rejected (__main__.SchemaTests.test_non_integer_price_rejected) ... ok
+test_null_price_rejected (__main__.SchemaTests.test_null_price_rejected) ... ok
+test_referenced_item_delete_rejected (__main__.SchemaTests.test_referenced_item_delete_rejected) ... ok
+test_source_prices_immutable (__main__.SchemaTests.test_source_prices_immutable) ... ok
+test_task_requires_valid_user (__main__.SchemaTests.test_task_requires_valid_user) ... ok
+test_task_status_restricted (__main__.SchemaTests.test_task_status_restricted) ... ok
+test_versioned_task_update (__main__.SchemaTests.test_versioned_task_update) ... ok
+test_zero_and_negative_prices_rejected (__main__.SchemaTests.test_zero_and_negative_prices_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.224s
+
+OK
+
+
+=== portfolio2_unit_tests ===
+test_bound_parameter_does_not_become_sql (__main__.QuerySemantics.test_bound_parameter_does_not_become_sql) ... ok
+test_changes_use_previous_calendar_month_and_real_division (__main__.QuerySemantics.test_changes_use_previous_calendar_month_and_real_division) ... ok
+test_indexes_preserve_all_query_results (__main__.QuerySemantics.test_indexes_preserve_all_query_results) ... ok
+test_missing_month_is_not_bridged (__main__.QuerySemantics.test_missing_month_is_not_bridged) ... ok
+test_missing_sixth_zone_is_not_reported_as_complete_spread (__main__.QuerySemantics.test_missing_sixth_zone_is_not_reported_as_complete_spread) ... ok
+test_period_change_ranks_relative_not_absolute_increase (__main__.QuerySemantics.test_period_change_ranks_relative_not_absolute_increase) ... ok
+test_query_only_connections_reject_writes (__main__.QuerySemantics.test_query_only_connections_reject_writes) ... ok
+test_rank_ties_and_exclusion_of_national_row (__main__.QuerySemantics.test_rank_ties_and_exclusion_of_national_row) ... ok
+test_rewrite_equivalence_requires_canonical_integer_text (__main__.QuerySemantics.test_rewrite_equivalence_requires_canonical_integer_text) ... ok
+test_smoked_fish_labels_remain_unmatched (__main__.QuerySemantics.test_smoked_fish_labels_remain_unmatched) ... ok
+test_spread_denominator_is_minimum_of_same_item (__main__.QuerySemantics.test_spread_denominator_is_minimum_of_same_item) ... ok
+test_top_price_ties_have_deterministic_order (__main__.QuerySemantics.test_top_price_ties_have_deterministic_order) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.086s
+
+OK
+
+
+=== portfolio4_unit_tests ===
+test_bad_month_key_and_schema_rejected (__main__.DocumentSemantics.test_bad_month_key_and_schema_rejected) ... ok
+test_crud_persists_without_mutating_snapshot (__main__.DocumentSemantics.test_crud_persists_without_mutating_snapshot) ... ok
+test_distinct_fish_labels_not_merged (__main__.DocumentSemantics.test_distinct_fish_labels_not_merged) ... ok
+test_duplicate_batch_rejected_before_any_write (__main__.DocumentSemantics.test_duplicate_batch_rejected_before_any_write) ... ok
+test_duplicate_geography_and_wrong_level_rejected (__main__.DocumentSemantics.test_duplicate_geography_and_wrong_level_rejected) ... ok
+test_integer_kobo_rejects_bool_float_zero_negative (__main__.DocumentSemantics.test_integer_kobo_rejects_bool_float_zero_negative) ... ok
+test_missing_provenance_rejected (__main__.DocumentSemantics.test_missing_provenance_rejected) ... ok
+test_nested_predicates_match_same_element (__main__.DocumentSemantics.test_nested_predicates_match_same_element) ... ok
+test_observation_reuse_across_documents_rejected (__main__.DocumentSemantics.test_observation_reuse_across_documents_rejected) ... ok
+test_reimport_requires_empty_collection (__main__.DocumentSemantics.test_reimport_requires_empty_collection) ... ok
+test_review_reference_and_status_validation (__main__.DocumentSemantics.test_review_reference_and_status_validation) ... ok
+test_valid_fictional_document_and_key (__main__.DocumentSemantics.test_valid_fictional_document_and_key) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.394s
+
+OK
+
+
+=== portfolio5_unit_tests ===
+test_diverged_replica_is_not_overwritten (__main__.ReplicationRules.test_diverged_replica_is_not_overwritten) ... ok
+test_event_insert_failure_rolls_back_task (__main__.ReplicationRules.test_event_insert_failure_rolls_back_task) ... ok
+test_mid_batch_failure_rolls_back_every_event_and_checkpoint (__main__.ReplicationRules.test_mid_batch_failure_rolls_back_every_event_and_checkpoint) ... ok
+test_missing_event_is_detected (__main__.ReplicationRules.test_missing_event_is_detected) ... ok
+test_missing_shard_does_not_create_empty_database (__main__.ReplicationRules.test_missing_shard_does_not_create_empty_database) ... ok
+test_outage_refuses_write_and_strict_read_but_labels_stale_read (__main__.ReplicationRules.test_outage_refuses_write_and_strict_read_but_labels_stale_read) ... ok
+test_repeat_delivery_does_not_duplicate_edits (__main__.ReplicationRules.test_repeat_delivery_does_not_duplicate_edits) ... ok
+test_shard_boundaries_and_invalid_periods (__main__.ReplicationRules.test_shard_boundaries_and_invalid_periods) ... ok
+test_stale_primary_edit_creates_no_event (__main__.ReplicationRules.test_stale_primary_edit_creates_no_event) ... ok
+test_strict_read_routes_to_primary_then_caught_up_replica (__main__.ReplicationRules.test_strict_read_routes_to_primary_then_caught_up_replica) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.016s
+
+OK
+
+
+=== portfolio1_fresh_import ===
+Built C:\Users\VICTOR\Documents\Codex\2026-10-01\th\work\final_audit_20261005T174217548507Z\fresh_build\Ezenduka_Chukwubuikem_301913360_Food_Prices.sqlite3
+{
+  "checked_at_utc": "2026-10-05T17:42:45.232939+00:00",
+  "python_version": "3.12.14",
+  "sqlite_version": "3.53.1",
+  "openpyxl_version": "3.1.5",
+  "counts": {
+    "publisher": 1,
+    "source_resource": 11,
+    "publication": 12,
+    "item": 43,
+    "geography": 7,
+    "price_observation": 3528,
+    "app_user": 2,
+    "review_task": 0
+  },
+  "monthly": [
+    {
+      "period": "2025-01",
+      "observations": 294
+    },
+    {
+      "period": "2025-02",
+      "observations": 294
+    },
+    {
+      "period": "2025-03",
+      "observations": 294
+    },
+    {
+      "period": "2025-04",
+      "observations": 294
+    },
+    {
+      "period": "2025-05",
+      "observations": 294
+    },
+    {
+      "period": "2025-06",
+      "observations": 294
+    },
+    {
+      "period": "2025-07",
+      "observations": 294
+    },
+    {
+      "period": "2025-08",
+      "observations": 294
+    },
+    {
+      "period": "2025-09",
+      "observations": 294
+    },
+    {
+      "period": "2025-10",
+      "observations": 294
+    },
+    {
+      "period": "2025-11",
+      "observations": 294
+    },
+    {
+      "period": "2025-12",
+      "observations": 294
+    }
+  ],
+  "source_cells_reconciled": 3528,
+  "integrity_check": "ok",
+  "foreign_key_violations": 0,
+  "price_rounding": "NGN to integer kobo using decimal ROUND_HALF_UP",
+  "synthetic_prices": 0,
+  "workflow_users": "2 explicitly fictional demo accounts",
+  "warnings": [
+    {
+      "period": "2025-03",
+      "issue": "Stale worksheet title; period taken from current-month column header",
+      "source_sheet": "Selected Food Dec 2024"
+    },
+    {
+      "period": "2025-04",
+      "issue": "Stale worksheet title; period taken from current-month column header",
+      "source_sheet": "Selected Food Dec 2024"
+    },
+    {
+      "issue": "National Smoked fish (Mackerel) and zonal Smoked fish kept as separate item labels; equivalence not established"
+    }
+  ]
+}
+
+
+=== portfolio2_full_execution ===
+B01_series_lookup : 102.962 -> 91.257 microseconds; ratio 1.128
+B02_top_prices : 188.554 -> 134.813 microseconds; ratio 1.399
+B03_predicate_rewrite : 197.802 -> 99.579 microseconds; ratio 1.986
+B04_coverage_control : 1886.541 -> 1909.809 microseconds; ratio 0.988
+Evidence: C:\Users\VICTOR\Documents\Codex\2026-10-01\th\work\final_audit_20261005T174217548507Z\portfolio2_20261005T174246007834Z\evidence
+All eight analytical queries match independent Python checks; source database unchanged.
+
+
+=== portfolio3_full_execution ===
+{
+  "run_id": "20261005T174321762873Z",
+  "passed_cases": 9,
+  "integrity": "ok",
+  "source_unchanged": true,
+  "evidence_directory": "C:\\Users\\VICTOR\\Documents\\Codex\\2026-10-01\\th\\work\\final_audit_20261005T174217548507Z\\portfolio3_20261005T174321762873Z\\evidence"
+}
+
+
+=== portfolio4_full_execution ===
+{
+  "run_id": "20261005T174324111814Z",
+  "documents": 516,
+  "observations": 3528,
+  "query_matches": {
+    "D01_December_focus": 1,
+    "D02_December_with_national": 42,
+    "D03_without_national": 12,
+    "D04_without_zones": 12,
+    "D05_national_at_least_100000_kobo": 453,
+    "D06_focus_all_months": 12
+  },
+  "reconciled": true,
+  "crud_verified": true,
+  "source_unchanged": true
+}
+
+
+=== portfolio5_full_execution ===
+{
+  "run_id": "20261005T174325750086Z",
+  "passed_cases": 8,
+  "shard_counts": [
+    1764,
+    1764
+  ],
+  "source_unchanged": true,
+  "scope": "Local single-process simulation with independent SQLite files; no cloud/network deployment"
+}

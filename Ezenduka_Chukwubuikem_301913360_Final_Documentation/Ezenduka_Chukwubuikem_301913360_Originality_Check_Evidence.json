@@ -1,0 +1,90 @@
+{
+  "checked_at_utc": "2026-10-05T17:44:56.561459+00:00",
+  "method": "Exact normalised 12-word windows in five main reports, excluding fenced code, Markdown tables and URLs, compared with nine named official documentation pages and assessment PDF.",
+  "assessment_matching_windows": {
+    "Ezenduka_Chukwubuikem_301913360_Portfolio1\\Ezenduka_Chukwubuikem_301913360_Design.md": 0,
+    "Ezenduka_Chukwubuikem_301913360_Portfolio2\\Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md": 0,
+    "Ezenduka_Chukwubuikem_301913360_Portfolio3\\Ezenduka_Chukwubuikem_301913360_Transaction_Analysis.md": 0,
+    "Ezenduka_Chukwubuikem_301913360_Portfolio4\\Ezenduka_Chukwubuikem_301913360_NoSQL_Analysis.md": 0,
+    "Ezenduka_Chukwubuikem_301913360_Portfolio5\\Ezenduka_Chukwubuikem_301913360_Distributed_Analysis.md": 0
+  },
+  "official_sources": [
+    {
+      "url": "https://www.sqlite.org/queryplanner.html",
+      "fetched": true,
+      "sha256": "f5e810a7c03401a3f9b2eda309ff55c22389c2a6d5eae33afbb969eb024437d6",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://www.sqlite.org/eqp.html",
+      "fetched": true,
+      "sha256": "9bcf6cac4798d8cacd5418da19c8151f7ad613956a51ee1e52a85618fdc590aa",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://www.sqlite.org/lang_analyze.html",
+      "fetched": true,
+      "sha256": "2fa0ead97e1499e7704d2ac2c63de6279bf8d066424b7a32c8e7560b76b23f3b",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://www.sqlite.org/isolation.html",
+      "fetched": true,
+      "sha256": "23395653f04984e4310b287ed548202d874e06ecd2cba17f32b2714e5b7ebef7",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://www.sqlite.org/lang_transaction.html",
+      "fetched": true,
+      "sha256": "b65dc308fd9e0ce471844c97366a4f5ad3a1f42833a3b19486ad7d6555a8e24e",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://www.sqlite.org/backup.html",
+      "fetched": true,
+      "sha256": "306b6cca5c7c2f93b648040ae139f14d7d3221c0d16d79b5749e69d808382e04",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://tinydb.readthedocs.io/en/latest/intro.html",
+      "fetched": true,
+      "sha256": "9a9deebb8757c97bf3b37386e41acb7a0b423607e9ced1b36d5f2a6fe8319fcf",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://tinydb.readthedocs.io/en/latest/usage.html",
+      "fetched": true,
+      "sha256": "0b98572dc3359cff57ba6a01ab087a2816e30f3a58746dd2b0ad1017f0c27ef9",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    },
+    {
+      "url": "https://docs.python.org/3/library/sqlite3.html",
+      "fetched": true,
+      "sha256": "5177ee78caa90d2eebcc7b99bedfb9c8b45630ecb4e2686dcf5b16fb43324c9b",
+      "matching_12word_windows_by_file": {},
+      "up_to_two_examples": []
+    }
+  ],
+  "sampled_web_search_phrases": [
+    "The Nigeria Food Price Observatory / 516",
+    "A rejected stale edit must be refreshed and reconsidered",
+    "The document store is a reproducible read-oriented projection"
+  ],
+  "sampled_web_search_result": "Returned search results did not establish an exact matching passage; search results were broad/unrelated. Not an exhaustive clearance.",
+  "institutional_similarity_percentage": null,
+  "threshold_assessment": "The required 20% maximum cannot be verified by this limited review.",
+  "limitations": [
+    "No access to proprietary student-paper databases or institutional screening service",
+    "Exact-window review misses paraphrases, translations, structural copying and unindexed sources",
+    "Technical terms, citations and standard code patterns may legitimately match",
+    "Originality and AI assistance are separate issues; neither this check nor tests establish authorship"
+  ]
+}
