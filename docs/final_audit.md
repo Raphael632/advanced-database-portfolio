@@ -39,4 +39,4 @@ OpenAI Codex is the AI tool used. It assisted with source research, code and doc
 
 The three-page summary is a **review draft**. Before submission, complete the personal technical reflection and accurate student-verification account, obtain the approved similarity result if available, confirm the assessor can access the private repository, and finish the named submission package. No final submission has been made.
 
-Evidence files: `Ezenduka_Chukwubuikem_301913360_Audit_Evidence.json`, `Ezenduka_Chukwubuikem_301913360_Audit_Log.txt`, and `Ezenduka_Chukwubuikem_301913360_Originality_Check_Evidence.json`.
+Evidence files: `audit_evidence.json`, `audit_log.txt`, and `originality_check_evidence.json`.

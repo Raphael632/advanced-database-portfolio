@@ -6,7 +6,7 @@ import unittest
 
 PREFIX = 'Ezenduka_Chukwubuikem_301913360'
 HERE = Path(__file__).resolve().parent
-spec = importlib.util.spec_from_file_location('portfolio_build', HERE / f'{PREFIX}_Build.py')
+spec = importlib.util.spec_from_file_location('portfolio_build', HERE / 'build.py')
 build = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(build)
 
@@ -14,7 +14,7 @@ spec.loader.exec_module(build)
 class SchemaTests(unittest.TestCase):
     def setUp(self):
         self.db = sqlite3.connect(':memory:')
-        self.db.executescript((HERE / f'{PREFIX}_Schema.sql').read_text(encoding='utf-8'))
+        self.db.executescript((HERE / 'schema.sql').read_text(encoding='utf-8'))
         self.db.execute("INSERT INTO publisher VALUES(1,'Fixture publisher','https://example.invalid')")
         self.db.execute("INSERT INTO source_resource VALUES(1,1,'https://example.invalid/source',?,'2026-10-02T00:00:00+00:00',100)", ('a'*64,))
         self.db.execute("INSERT INTO publication VALUES(1,1,'2025-01','fixture.xlsx',?)", ('b'*64,))

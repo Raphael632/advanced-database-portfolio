@@ -10,7 +10,7 @@ The recorded experiment is `20261003T212336269310Z`, run on 3 October 2026. Sour
 
 ## 2. SQL implementation and query results
 
-The eight parameterised statements in `Ezenduka_Chukwubuikem_301913360_Queries.sql` use joins, grouping, conditional aggregation, a calendar-month self-join, a common table expression, a window function and an anti-join. The default focus is `Rice Local, short-Grained`, with Nigeria as the national comparison geography.
+The eight parameterised statements in `queries.sql` use joins, grouping, conditional aggregation, a calendar-month self-join, a common table expression, a window function and an anti-join. The default focus is `Rice Local, short-Grained`, with Nigeria as the national comparison geography.
 
 | Query | Operation and purpose | Actual output |
 |---|---|---|
@@ -23,7 +23,7 @@ The eight parameterised statements in `Ezenduka_Chukwubuikem_301913360_Queries.s
 | Q07 unmatched labels | `NOT EXISTS` cross-level match | 72 zonal `Smoked fish` records and 12 national `Smoked fish (Mackerel)` records lack an exact-label counterpart |
 | Q08 spread ranking | Group one month's zonal values per item and rank relative spread | Ten December item spreads, using six zones for every included item |
 
-Full derived result tables are in [Query Results](Ezenduka_Chukwubuikem_301913360_Query_Results.md), with machine-readable equivalents in the matching JSON file. There are **106 analytical result rows** in total. Raw-price rows returned by the benchmark-only statements stay in the local run directory and are not redistributed.
+Full derived result tables are in [Query Results](query_results.md), with machine-readable equivalents in the matching JSON file. There are **106 analytical result rows** in total. Raw-price rows returned by the benchmark-only statements stay in the local run directory and are not redistributed.
 
 ### Selected analytical findings
 
@@ -60,7 +60,7 @@ These indexes support different orderings. Neither is simply a leading-column du
 
 ## 4. Execution-plan evidence
 
-The actual plans are saved in [Execution Plans](Ezenduka_Chukwubuikem_301913360_Execution_Plans.md). The JSON file also captures before/after plans for all eight analytical queries.
+The actual plans are saved in [Execution Plans](execution_plans.md). The JSON file also captures before/after plans for all eight analytical queries.
 
 **Series lookup:** before tuning, SQLite already uses the natural-key index with `ANY(publication_id)` and equality tests on item and geography. This is a skip-scan style access path, not a full-table scan. After tuning, it searches the covering series index directly using the two leading equality columns. The measured virtual-machine work falls from 202 to 72 callback units.
 

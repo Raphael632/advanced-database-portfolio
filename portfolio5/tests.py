@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 P = 'Ezenduka_Chukwubuikem_301913360'
-spec = importlib.util.spec_from_file_location('portfolio5', Path(__file__).with_name(P+'_Run.py'))
+spec = importlib.util.spec_from_file_location('portfolio5', Path(__file__).with_name('run.py'))
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
 

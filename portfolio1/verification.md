@@ -28,10 +28,10 @@ Importer tests check month parsing from the current-period header, malformed hea
 
 ## Evidence files
 
-- `Ezenduka_Chukwubuikem_301913360_Validation.json`: actual database counts, engine versions, reconciliation outcome and source issues.
-- `Ezenduka_Chukwubuikem_301913360_Test_Log.txt`: actual output of all 20 tests.
-- `Ezenduka_Chukwubuikem_301913360_Sources.json`: download URLs, expected reporting months and source checksums.
-- `Ezenduka_Chukwubuikem_301913360_Schema.sql`: executed relational schema.
-- `Ezenduka_Chukwubuikem_301913360_ER_Diagram.png`: diagram checked against the schema and visually inspected.
+- `validation.json`: actual database counts, engine versions, reconciliation outcome and source issues.
+- `test_log.txt`: actual output of all 20 tests.
+- `sources.json`: download URLs, expected reporting months and source checksums.
+- `schema.sql`: executed relational schema.
+- `er_diagram.png`: diagram checked against the schema and visually inspected.
 
-No complete source tables or populated database are included in Git or this report. Source and database reconstruction is documented in the student-prefixed README. The original local commits were published to the private GitHub repository on 2 October 2026 with their commit IDs preserved. Student review remains pending. Subsequent query optimisation, transactions/concurrency, NoSQL and local distributed/cloud exercise evidence are documented separately in Portfolios 2–5.
+No complete source tables or populated database are included in Git or this report. Source and database reconstruction is documented in the project guide in `docs/project_guide.md`. The original local commits were published to the private GitHub repository on 2 October 2026 with their commit IDs preserved. The student reviewed and approved Portfolio 1 on 14 October 2026; no specific student code execution is claimed. Subsequent query optimisation, transactions/concurrency, NoSQL and local distributed/cloud exercise evidence are documented separately in Portfolios 2–5.

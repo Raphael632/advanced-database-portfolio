@@ -314,11 +314,11 @@ def run(database, workspace, evidence_dir=None):
         'passed_cases': len(events), 'cases': events}
     out = evidence_dir.resolve() if evidence_dir else local/'evidence'
     out.mkdir(parents=True, exist_ok=True)
-    (out/f'{PREFIX}_Distributed_Evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
+    (out/'distributed_evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
     lines = ['# Portfolio 5: executed local exercise', '', 'Run: `' + stamp + '`', '', evidence['scope'], '']
     for case in events:
         lines += ['## ' + case['case'], '', '**PASS**', '', '```json', json.dumps(case, indent=2), '```', '']
-    (out/f'{PREFIX}_Distributed_Evidence.md').write_text('\n'.join(lines), encoding='utf-8')
+    (out/'distributed_evidence.md').write_text('\n'.join(lines), encoding='utf-8')
     page = '''<!doctype html><html lang="en"><meta charset="utf-8"><title>Portfolio 5 evidence</title>
 <style>body{max-width:1000px;margin:40px auto;padding:0 22px;font:17px/1.6 system-ui;color:#183048;background:#f5f8fc}section{padding:24px;background:white;border:1px solid #c8d7e5;border-radius:12px;margin:20px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}</style>
 <h1>Portfolio 5: replication, recovery and sharding</h1><p>Local controlled exercise, not a cloud deployment.</p>
@@ -326,7 +326,7 @@ def run(database, workspace, evidence_dir=None):
     for case in events:
         page += '<section><h2>' + html.escape(case['case']) + '</h2><pre>' + html.escape(json.dumps(case, indent=2)) + '</pre></section>'
     page += '</html>'
-    (out/f'{PREFIX}_Evidence_Preview.html').write_text(page, encoding='utf-8')
+    (out/'evidence_preview.html').write_text(page, encoding='utf-8')
     print(json.dumps({'run_id': stamp, 'passed_cases': len(events), 'shard_counts': counts,
                      'source_unchanged': True, 'scope': evidence['scope']}, indent=2))
     return evidence

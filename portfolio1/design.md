@@ -35,7 +35,7 @@ The selected data cover January-December 2025. Each monthly workbook provides 42
 
 The companion ER diagram shows the implemented tables. `PK` means primary key, `FK` foreign key and `UQ` a unique constraint. Each child has exactly one required parent; a parent may have no child rows. A price observation may have no review task or one task.
 
-![Implemented ER diagram](Ezenduka_Chukwubuikem_301913360_ER_Diagram.png)
+![Implemented ER diagram](er_diagram.png)
 
 <details>
 <summary>Editable diagram source</summary>

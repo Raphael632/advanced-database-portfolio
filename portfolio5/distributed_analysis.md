@@ -10,7 +10,7 @@ The implemented primary, replica, restored database and two shards are **separat
 
 The assessment permits a distributed/cloud discussion or setup. The practical evidence here supplements the architecture discussion without claiming a service was deployed. Run **20261004T110216717910Z** passed **eight integration scenarios**, and **ten focused failure/routing tests** passed.
 
-![Implemented local exercise and proposed cloud design](Ezenduka_Chukwubuikem_301913360_Architecture.png)
+![Implemented local exercise and proposed cloud design](architecture.png)
 
 ## Implemented replication model
 
@@ -43,7 +43,7 @@ The primary acknowledges before replication, so the exercised mechanism is async
 | S07 range shards | January-June and July-December hold 1,764 observations each. Their ordered union equals all 3,528 source projection rows with no overlapping observation IDs. |
 | S08 missing shard | A global read refuses to return a supposedly complete result when a required shard is absent. It does not create a new empty database in its place. |
 
-Full outputs and checksums are in [Distributed Evidence](Ezenduka_Chukwubuikem_301913360_Distributed_Evidence.md) and its JSON counterpart. [The test log](Ezenduka_Chukwubuikem_301913360_Test_Log.txt) covers stale primary edits, event-log insertion failure, mid-batch rollback, repeat replay, log gaps, replica divergence, routing, outage refusal, shard boundaries and missing files.
+Full outputs and checksums are in [Distributed Evidence](distributed_evidence.md) and its JSON counterpart. [The test log](test_log.txt) covers stale primary edits, event-log insertion failure, mid-batch rollback, repeat replay, log gaps, replica divergence, routing, outage refusal, shard boundaries and missing files.
 
 ## Sharding choices
 
@@ -83,7 +83,7 @@ Automatic replica promotion is intentionally absent because a lagging replica co
 
 The run uses Python 3.12.14 and SQLite 3.53.1, with foreign keys enabled and `synchronous=FULL` on opened node connections. Runtime files stay in a timestamped local directory. The original source SHA-256 is unchanged. Code, aggregate counts, hashes and fictional workflow states are the only published evidence; populated database files remain excluded.
 
-Follow the [Portfolio 5 README](Ezenduka_Chukwubuikem_301913360_Portfolio5_README.md) to reproduce. The HTML viewer provides the executed scenario results without relying on Mermaid rendering.
+Follow the [Portfolio 5 README](README.md) to reproduce. The HTML viewer provides the executed scenario results without relying on Mermaid rendering.
 
 References: Portfolio 1's NBS source manifest; [SQLite Backup API](https://www.sqlite.org/backup.html); [PostgreSQL standby servers](https://www.postgresql.org/docs/current/warm-standby.html), consulted 4 October 2026. PostgreSQL is referenced for the proposed architecture and has not been deployed or tested in this project.
 

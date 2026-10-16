@@ -14,7 +14,7 @@ Recorded run: **20261003T223205428931Z**. The persisted store contains **516 doc
 
 One `monthly_items` document represents **one calendar month and one exact source item label**. Its observations array embeds the national and available zonal values. Each element retains integer kobo, geography, geographic level, original observation ID, source sheet and cell. Provenance is shared at document level because all embedded observations belong to the same source publication.
 
-![Monthly item document model](Ezenduka_Chukwubuikem_301913360_Document_Model.png)
+![Monthly item document model](document_model.png)
 
 <details>
 <summary>Editable diagram source</summary>
@@ -49,7 +49,7 @@ TinyDB's internal integer `doc_id` is a storage identifier. References use `docu
 
 Each month has 43 documents. Across twelve months, **492 documents contain seven observations**, **12 contain six**, and **12 contain one**. The two source fish labels remain separate: `Smoked fish` has zonal coverage while `Smoked fish (Mackerel)` has national coverage. Missing coverage is represented by absent elements, not fabricated prices or zeros. The observations reconcile as `492 × 7 + 12 × 6 + 12 × 1 = 3,528`.
 
-The [fictional example](Ezenduka_Chukwubuikem_301913360_Fictional_Document_Example.json) is a complete example document with explicitly invented prices, a fictional publisher and an invalid example-domain URL. Actual source documents remain local because of the source-use restrictions documented in Portfolio 1.
+The [fictional example](fictional_document_example.json) is a complete example document with explicitly invented prices, a fictional publisher and an invalid example-domain URL. Actual source documents remain local because of the source-use restrictions documented in Portfolio 1.
 
 ## Why embed observations and reference reviews?
 
@@ -89,7 +89,7 @@ The runner imports documents using `insert_multiple`, closes the database and re
 
 The snapshot document hash is unchanged by review CRUD. The original SQLite file's before/after SHA-256 also matches. These are ordinary persistence and preservation checks, not proof of ACID or fault-tolerant storage. No real NBS review is claimed by the demonstration notes.
 
-See [actual NoSQL results](Ezenduka_Chukwubuikem_301913360_NoSQL_Evidence.md), the matching JSON, [test log](Ezenduka_Chukwubuikem_301913360_Test_Log.txt) and [visual evidence page](Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html). The HTML is generated from captured results and is not presented as a screenshot of a separate application.
+See [actual NoSQL results](nosql_evidence.md), the matching JSON, [test log](test_log.txt) and [visual evidence page](evidence_preview.html). The HTML is generated from captured results and is not presented as a screenshot of a separate application.
 
 ## Suitability and limitations
 
@@ -108,7 +108,7 @@ For a shared production service, SQLite remains the safer implemented workflow s
 
 ## Reproduction, references and ownership
 
-Follow the [Portfolio 4 README](Ezenduka_Chukwubuikem_301913360_Portfolio4_README.md). Python 3.12 or later and pinned TinyDB 4.9.0 are used. Each run creates a new local directory. No populated JSON database or source prices are published. The test suite uses fictional data only.
+Follow the [Portfolio 4 README](README.md). Python 3.12 or later and pinned TinyDB 4.9.0 are used. Each run creates a new local directory. No populated JSON database or source prices are published. The test suite uses fictional data only.
 
 Sources: Portfolio 1 NBS source manifest; TinyDB's [introduction](https://tinydb.readthedocs.io/en/latest/intro.html) and [usage documentation](https://tinydb.readthedocs.io/en/latest/usage.html), consulted 3 October 2026. The observed engine version and runtime hashes are recorded in evidence.
 

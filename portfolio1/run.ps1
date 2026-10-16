@@ -1,10 +1,10 @@
 param(
     [ValidateSet('all','fetch','build','validate','test')][string]$Action = 'all',
-    [string]$Workspace = (Join-Path $PSScriptRoot '.local')
+    [string]$Workspace = (Join-Path (Split-Path $PSScriptRoot -Parent) '.local')
 )
 $ErrorActionPreference = 'Stop'
 $prefix = 'Ezenduka_Chukwubuikem_301913360'
-$phasePath = Join-Path $PSScriptRoot ($prefix + '_Portfolio1')
+$phasePath = $PSScriptRoot
 $candidatePaths = @(
     (Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'),
     'python'
@@ -24,10 +24,10 @@ if ($Action -ne 'test') {
     if ($Action -eq 'all' -and (Test-Path (Join-Path $Workspace ($prefix + '_Food_Prices.sqlite3')))) {
         $buildAction = 'validate'
     }
-    & $portfolioPython -X utf8 (Join-Path $phasePath ($prefix + '_Build.py')) $buildAction --workspace $Workspace
+    & $portfolioPython -X utf8 (Join-Path $phasePath 'build.py') $buildAction --workspace $Workspace
     if ($LASTEXITCODE -ne 0) { throw 'Portfolio database operation failed; inspect the error above.' }
 }
 if ($Action -in @('all','test')) {
-    & $portfolioPython -X utf8 (Join-Path $phasePath ($prefix + '_Tests.py'))
+    & $portfolioPython -X utf8 (Join-Path $phasePath 'tests.py')
     if ($LASTEXITCODE -ne 0) { throw 'Portfolio tests failed.' }
 }

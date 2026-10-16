@@ -255,10 +255,10 @@ def run(database, workspace, evidence_dir=None):
                         'Schema, uniqueness and references are checked by application code only']}
     out = evidence_dir.resolve() if evidence_dir else local / 'evidence'
     out.mkdir(parents=True, exist_ok=True)
-    (out / f'{PREFIX}_NoSQL_Evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
+    (out / 'nosql_evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
     example = fictional_example()
     validate_document(example)
-    (out / f'{PREFIX}_Fictional_Document_Example.json').write_text(json.dumps(example, indent=2), encoding='utf-8')
+    (out / 'fictional_document_example.json').write_text(json.dumps(example, indent=2), encoding='utf-8')
     lines = ['# Portfolio 4: actual NoSQL results', '', 'Run: `' + stamp + '`', '',
              f"TinyDB {version('tinydb')}; {len(documents)} persisted item/month documents; {len(rows)} reconciled observations.",
              '', '| Query | Matching documents | Independent SQL check |', '|---|---:|---|']
@@ -266,7 +266,7 @@ def run(database, workspace, evidence_dir=None):
     lines += ['', 'All original source fields, including provenance, matched after closing and reopening storage.',
               'Fictional review insert/read/update/delete and persistence checks passed; snapshot documents were unchanged.',
               'The original SQLite file hash is unchanged. Full checksums and reference SQL are in the JSON evidence.']
-    (out / f'{PREFIX}_NoSQL_Evidence.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    (out / 'nosql_evidence.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     preview = '''<!doctype html><html lang="en"><meta charset="utf-8"><title>Portfolio 4 — Document Database</title>
 <style>body{max-width:1040px;margin:40px auto;padding:0 22px;font:17px/1.6 system-ui;color:#183048;background:#f5f8fc}section{background:white;padding:24px;border:1px solid #d5dfeb;border-radius:12px;margin:20px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}</style>
 <h1>Portfolio 4: document database</h1><p>Ezenduka Chukwubuikem · 301913360 · Nigeria Food Price Observatory</p>
@@ -278,7 +278,7 @@ def run(database, workspace, evidence_dir=None):
     preview += '<section><h2>Fictional document example — not NBS prices</h2><pre>' + html.escape(json.dumps(example, indent=2)) + '</pre></section>'
     preview += '<section><h2>Single-writer CRUD evidence</h2><pre>' + html.escape(json.dumps(evidence['demo_crud'], indent=2)) + '</pre></section>'
     preview += '<p>This is an actual embedded NoSQL implementation. It does not provide production concurrency, native indexes or ACID guarantees.</p></html>'
-    (out / f'{PREFIX}_Evidence_Preview.html').write_text(preview, encoding='utf-8')
+    (out / 'evidence_preview.html').write_text(preview, encoding='utf-8')
     print(json.dumps({'run_id': stamp, 'documents': len(documents), 'observations': len(rows),
                       'query_matches': {k: v['matched_documents'] for k, v in summaries.items()},
                       'reconciled': True, 'crud_verified': True, 'source_unchanged': True}, indent=2))

@@ -2,7 +2,7 @@
 
 Status: **local exercise implemented and tested; cloud architecture proposed, not deployed; student review pending**.
 
-Start with the [analysis and architecture](Ezenduka_Chukwubuikem_301913360_Distributed_Analysis.md). The [HTML evidence viewer](Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html) opens locally in a browser; [Markdown evidence](Ezenduka_Chukwubuikem_301913360_Distributed_Evidence.md) is readable on GitHub.
+Start with the [analysis and architecture](distributed_analysis.md). The [HTML evidence viewer](evidence_preview.html) opens locally in a browser; [Markdown evidence](distributed_evidence.md) is readable on GitHub.
 
 Eight integration scenarios demonstrate asynchronous review-event replication, stale-read routing, simulated outage refusal, replay recovery, backup restoration and month-range shards. Ten focused failure/routing tests pass. These are separate files in one local process, not deployed network nodes.
 
@@ -11,8 +11,8 @@ Eight integration scenarios demonstrate asynchronous review-event replication, s
 Build Portfolio 1 first. Python 3.12 or later with SQLite 3.37 or later is required; this phase uses the standard library only. From the repository root:
 
 ```powershell
-python Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Run.py
-python Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Tests.py
+python portfolio5/run.py
+python portfolio5/tests.py
 ```
 
 The runner reads `.local/Ezenduka_Chukwubuikem_301913360_Food_Prices.sqlite3` by default. It expects the original Portfolio 1 database with no review tasks. For another location, append `--database PATH_TO_DATABASE --workspace PATH_TO_LOCAL_RUNS`.

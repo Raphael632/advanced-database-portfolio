@@ -3,29 +3,29 @@
 **Status:** implemented and tested; student review pending.
 **Case study:** Nigeria Food Price Observatory, using the Portfolio 1 NBS database.
 
-Start with the [performance analysis](Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md). The phase contains eight analytical queries, two covering indexes, an equivalent-predicate rewrite, measured execution plans/timings, 106 checked analytical output rows and twelve passing semantic tests.
+Start with the [performance analysis](performance_analysis.md). The phase contains eight analytical queries, two covering indexes, an equivalent-predicate rewrite, measured execution plans/timings, 106 checked analytical output rows and twelve passing semantic tests.
 
 ## Evidence map
 
 | Requirement | File |
 |---|---|
-| SQL statements | `Ezenduka_Chukwubuikem_301913360_Queries.sql` |
-| Query results | `Ezenduka_Chukwubuikem_301913360_Query_Results.md` and `.json` |
-| Benchmark statements and index definitions | `Ezenduka_Chukwubuikem_301913360_Benchmark_Queries.sql`, `Ezenduka_Chukwubuikem_301913360_Indexes.sql` |
-| Experiment design fixed before measurement | `Ezenduka_Chukwubuikem_301913360_Method.md` |
-| Actual execution plans | `Ezenduka_Chukwubuikem_301913360_Execution_Plans.md` and `.json` |
-| Timings, all round samples, work counts, storage and environment | `Ezenduka_Chukwubuikem_301913360_Benchmark_Results.json` |
-| Explanation and limitations | `Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md` |
-| Reproducible runner | `Ezenduka_Chukwubuikem_301913360_Run.py` |
-| Semantic checks and actual output | `Ezenduka_Chukwubuikem_301913360_Tests.py`, `Ezenduka_Chukwubuikem_301913360_Test_Log.txt` |
+| SQL statements | `queries.sql` |
+| Query results | `query_results.md` and `.json` |
+| Benchmark statements and index definitions | `benchmark_queries.sql`, `indexes.sql` |
+| Experiment design fixed before measurement | `method.md` |
+| Actual execution plans | `execution_plans.md` and `.json` |
+| Timings, all round samples, work counts, storage and environment | `benchmark_results.json` |
+| Explanation and limitations | `performance_analysis.md` |
+| Reproducible runner | `run.py` |
+| Semantic checks and actual output | `tests.py`, `test_log.txt` |
 
 ## Reproduce
 
 Build Portfolio 1 first. From the repository root, using Python 3.12 or later with SQLite 3.37 or later:
 
 ```powershell
-python Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Run.py
-python Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Tests.py
+python portfolio2/run.py
+python portfolio2/tests.py
 ```
 
 The runner uses the standard library only. It reads `.local/Ezenduka_Chukwubuikem_301913360_Food_Prices.sqlite3` by default and creates a new timestamped run directory under `.local`. It never writes to the source database. The run contains baseline/tuned database copies, raw-price benchmark rows marked `LOCAL_ONLY`, and an `evidence` directory of derived outputs. These local data must remain excluded from the submission and Git.

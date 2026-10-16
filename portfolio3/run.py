@@ -272,13 +272,13 @@ def run(database, workspace, evidence_dir=None):
                    'passed_cases': len(cases)}, 'cases': cases}
     out = evidence_dir.resolve() if evidence_dir else local / 'evidence'
     out.mkdir(parents=True, exist_ok=True)
-    (out / f'{PREFIX}_Transaction_Evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
+    (out / 'transaction_evidence.json').write_text(json.dumps(evidence, indent=2), encoding='utf-8')
     lines = ['# Portfolio 3: executed transaction evidence', '', f'Run: `{stamp}`', '',
              'All task notes below are fictional demonstration data. No raw prices are exported.', '']
     for case in cases:
         lines.extend(['## ' + case['case'], '', '**PASS**', '', '```json',
                       json.dumps(case['steps'], indent=2), '```', ''])
-    (out / f'{PREFIX}_Transaction_Evidence.md').write_text('\n'.join(lines), encoding='utf-8')
+    (out / 'transaction_evidence.md').write_text('\n'.join(lines), encoding='utf-8')
     preview = ['<!doctype html><html lang="en"><meta charset="utf-8">',
                '<title>Portfolio 3 — Transaction Evidence</title>',
                '<style>body{max-width:1000px;margin:40px auto;padding:0 22px;font:17px/1.6 system-ui;color:#183048;background:#f5f8fc}section{background:white;padding:22px;margin:22px 0;border:1px solid #d5dfeb;border-radius:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}.pass{color:#146b40}h1,h2{line-height:1.25}</style>',
@@ -293,7 +293,7 @@ def run(database, workspace, evidence_dir=None):
                         '<details><summary>Actual SQL trace by connection</summary><pre>' +
                         html.escape(json.dumps(case['sql_trace'], indent=2)) + '</pre></details></section>'])
     preview.append('</html>')
-    (out / f'{PREFIX}_Evidence_Preview.html').write_text('\n'.join(preview), encoding='utf-8')
+    (out / 'evidence_preview.html').write_text('\n'.join(preview), encoding='utf-8')
     print(json.dumps({'run_id': stamp, 'passed_cases': len(cases), 'integrity': 'ok',
                       'source_unchanged': True, 'evidence_directory': str(out)}, indent=2))
     return evidence

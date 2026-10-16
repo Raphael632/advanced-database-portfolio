@@ -27,7 +27,7 @@ FOCUS_ITEM = 'Rice Local, short-Grained'
 
 
 def sql_catalog(filename):
-    text = (HERE / f'{PREFIX}_{filename}.sql').read_text(encoding='utf-8-sig')
+    text = (HERE / f'{filename.lower()}.sql').read_text(encoding='utf-8-sig')
     parts = re.split(r'^-- name: ([A-Z0-9_]+)\s*$', text, flags=re.M)
     return {parts[n]: parts[n+1].strip() for n in range(1,len(parts),2)}
 
@@ -208,9 +208,9 @@ def write_json(path, value):
 
 def write_evidence(folder, report, outputs, plans):
     folder.mkdir(parents=True,exist_ok=True)
-    write_json(folder/f'{PREFIX}_Benchmark_Results.json',report)
-    write_json(folder/f'{PREFIX}_Query_Results.json',outputs)
-    write_json(folder/f'{PREFIX}_Execution_Plans.json',plans)
+    write_json(folder/'benchmark_results.json',report)
+    write_json(folder/'query_results.json',outputs)
+    write_json(folder/'execution_plans.json',plans)
     lines=['# Portfolio 2: Executed query results','',
            'Derived analytical results from NBS 2025 published averages. No raw price table is reproduced.',
            '',f"Focus item: {FOCUS_ITEM}. Focus geography: Nigeria. Run: {report['run_id']}.",'']
@@ -220,7 +220,7 @@ def write_evidence(folder, report, outputs, plans):
         for row in output['rows']:
             lines.append('| '+' | '.join(str(row[col]).replace('|','\\|') for col in columns)+' |')
         lines.append('')
-    (folder/f'{PREFIX}_Query_Results.md').write_text('\n'.join(lines),encoding='utf-8')
+    (folder/'query_results.md').write_text('\n'.join(lines),encoding='utf-8')
     lines=['# Portfolio 2: Actual execution plans','',
            f"SQLite {report['environment']['sqlite_version']}. Plans are engine/version-specific. No plan hints were used.",'']
     for case in report['benchmarks']:
@@ -229,7 +229,7 @@ def write_evidence(folder, report, outputs, plans):
             lines += [phase.capitalize()+':','', '```text']
             lines += [f"{row['id']:3} parent={row['parent']:3}  {row['detail']}" for row in case['plans'][phase]]
             lines += ['```','']
-    (folder/f'{PREFIX}_Execution_Plans.md').write_text('\n'.join(lines),encoding='utf-8')
+    (folder/'execution_plans.md').write_text('\n'.join(lines),encoding='utf-8')
 
 
 def run(source_path, workspace, evidence_dir=None, rounds=31, repetitions=200, warmups=20):
@@ -258,7 +258,7 @@ def run(source_path, workspace, evidence_dir=None, rounds=31, repetitions=200, w
     try:
         baseline.execute('ANALYZE')
         baseline.commit()
-        index_sql=(HERE/f'{PREFIX}_Indexes.sql').read_text(encoding='utf-8')
+        index_sql=(HERE/'indexes.sql').read_text(encoding='utf-8')
         start=perf_counter_ns()
         tuned.executescript(index_sql)
         setup_ms=(perf_counter_ns()-start)/1e6

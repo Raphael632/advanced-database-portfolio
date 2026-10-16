@@ -2,7 +2,7 @@
 
 Status: **implemented and verified; student review pending**.
 
-Start with the [transaction analysis](Ezenduka_Chukwubuikem_301913360_Transaction_Analysis.md). Open the [HTML evidence viewer](Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html) locally in a browser for the process sequence and expandable SQL traces. GitHub displays HTML source; [Markdown evidence](Ezenduka_Chukwubuikem_301913360_Transaction_Evidence.md) can be read directly on GitHub.
+Start with the [transaction analysis](transaction_analysis.md). Open the [HTML evidence viewer](evidence_preview.html) locally in a browser for the process sequence and expandable SQL traces. GitHub displays HTML source; [Markdown evidence](transaction_evidence.md) can be read directly on GitHub.
 
 | Requirement | Evidence |
 |---|---|
@@ -18,7 +18,7 @@ Start with the [transaction analysis](Ezenduka_Chukwubuikem_301913360_Transactio
 Build Portfolio 1 first. Use Python 3.12 or later with SQLite 3.37 or later; the runner uses the standard library only. From the repository root:
 
 ```powershell
-python Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_Chukwubuikem_301913360_Run.py
+python portfolio3/run.py
 ```
 
 Input defaults to `.local/Ezenduka_Chukwubuikem_301913360_Food_Prices.sqlite3`, the original Portfolio 1 database with no review tasks. If stored elsewhere, append `--database PATH_TO_DATABASE --workspace PATH_TO_LOCAL_RUNS`.

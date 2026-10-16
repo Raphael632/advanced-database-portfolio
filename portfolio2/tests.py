@@ -6,7 +6,7 @@ import unittest
 
 PREFIX='Ezenduka_Chukwubuikem_301913360'
 HERE=Path(__file__).resolve().parent
-spec=importlib.util.spec_from_file_location('portfolio2',HERE/f'{PREFIX}_Run.py')
+spec=importlib.util.spec_from_file_location('portfolio2',HERE/'run.py')
 portfolio=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(portfolio)
 QUERIES=portfolio.sql_catalog('Queries')
@@ -16,7 +16,7 @@ BENCH=portfolio.sql_catalog('Benchmark_Queries')
 class QuerySemantics(unittest.TestCase):
     def setUp(self):
         self.db=sqlite3.connect(':memory:')
-        schema=HERE.parent/f'{PREFIX}_Portfolio1'/f'{PREFIX}_Schema.sql'
+        schema=HERE.parent/'portfolio1'/'schema.sql'
         self.db.executescript(schema.read_text(encoding='utf-8'))
         self.db.execute("INSERT INTO publisher VALUES(1,'Test fixture','https://example.invalid')")
         self.db.execute("INSERT INTO source_resource VALUES(1,1,'https://example.invalid/source',?,'2026-10-03',1)",('a'*64,))
@@ -109,7 +109,7 @@ class QuerySemantics(unittest.TestCase):
         for month in range(1,4):
             for geo in range(1,8): self.add(month,1,geo,10000+month*100+geo*10)
         before={name:self.rows(name) for name in QUERIES}
-        self.db.executescript((HERE/f'{PREFIX}_Indexes.sql').read_text(encoding='utf-8'))
+        self.db.executescript((HERE/'indexes.sql').read_text(encoding='utf-8'))
         after={name:self.rows(name) for name in QUERIES}
         self.assertEqual(before,after)
 

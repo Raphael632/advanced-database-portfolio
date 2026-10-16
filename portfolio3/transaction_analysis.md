@@ -8,7 +8,7 @@ The Nigeria Food Price Observatory preserves published NBS observations while an
 
 The experiment uses a fresh local copy of the Portfolio 1 database containing 3,528 real observations. Nine **fictional demonstration tasks** reference existing observations. Their `DEMO:` notes describe simulated actions, not actual checks performed by NBS or the student. No raw prices or populated databases are exported.
 
-The executed run is **20261003T220409895229Z**. All **nine scenarios passed**, the original database hash remained unchanged, and integrity and foreign-key checks passed. [Transaction Evidence](Ezenduka_Chukwubuikem_301913360_Transaction_Evidence.md) contains actual step outputs. Its JSON counterpart also records SQL by connection. The [HTML viewer](Ezenduka_Chukwubuikem_301913360_Evidence_Preview.html) presents the captured results with expandable SQL traces; it is generated evidence, not a screenshot.
+The executed run is **20261003T220409895229Z**. All **nine scenarios passed**, the original database hash remained unchanged, and integrity and foreign-key checks passed. [Transaction Evidence](transaction_evidence.md) contains actual step outputs. Its JSON counterpart also records SQL by connection. The [HTML viewer](evidence_preview.html) presents the captured results with expandable SQL traces; it is generated evidence, not a screenshot.
 
 ## Transaction design
 
@@ -25,7 +25,7 @@ WHERE task_id = :task_id AND version = :loaded_version;
 
 The implemented `guarded_edit` function binds parameters, checks the affected count and rolls back on exceptions before propagating them. A missing task also returns false; an interface would reread to distinguish it from a version conflict. Invalid status values remain errors. This is a database demonstration, not an authenticated review application.
 
-![Review version-check sequence](Ezenduka_Chukwubuikem_301913360_Review_Sequence.png)
+![Review version-check sequence](review_sequence.png)
 
 <details>
 <summary>Editable diagram source</summary>
@@ -85,7 +85,7 @@ In WAL mode a reader can retain an earlier snapshot while a writer commits, but 
 
 The captured environment is Python 3.12.14, SQLite 3.53.1. Each connection enables foreign keys and uses explicit transactions (`isolation_level=None`). Settings and the runner hash are in JSON. The original database is opened read-only for backup and checked by SHA-256 before/after. The populated copy remains local. No schema migration or source-price changes are made.
 
-This phase does not establish multi-server behaviour, production security, transaction throughput or correctness under every possible schedule. Follow the [README](Ezenduka_Chukwubuikem_301913360_Portfolio3_README.md) to repeat these nine defined scenarios; the harness stops on any mismatch.
+This phase does not establish multi-server behaviour, production security, transaction throughput or correctness under every possible schedule. Follow the [README](README.md) to repeat these nine defined scenarios; the harness stops on any mismatch.
 
 ## References and student review
 

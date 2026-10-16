@@ -35,6 +35,10 @@ Codex performed a fresh source rebuild, reran 54 unit tests and all five phase e
 
 ## Student review
 
-Student review of the implementation has not yet been recorded. Do not claim that the student has tested or understood any specific feature before that review occurs.
+On 14 October 2026, the student confirmed that Portfolio 1 had been reviewed and was satisfactory. No specific code executions were reported. Student review of Portfolios 2–5 and the personal reflection remain pending.
 
 After each phase, record the student's actual actions: scripts run, results checked, design choices explained, corrections requested, and lessons learned. These entries will support the final AI-use declaration and personal reflection.
+
+## Repository organisation — 14 October 2026
+
+At the student's request, GitHub folders and filenames were simplified; supporting records were moved to `docs`. Submission naming will be applied to the separate final package. Captured evidence files and the summary PDF retain their original content and dates; historical hashes refer to those earlier executions, not the relocated script bytes.

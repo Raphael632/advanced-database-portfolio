@@ -8,7 +8,7 @@ from tinydb import TinyDB, Query
 from tinydb.storages import MemoryStorage
 
 PREFIX = 'Ezenduka_Chukwubuikem_301913360'
-spec = importlib.util.spec_from_file_location('portfolio4', Path(__file__).with_name(PREFIX + '_Run.py'))
+spec = importlib.util.spec_from_file_location('portfolio4', Path(__file__).with_name('run.py'))
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
 

@@ -37,7 +37,7 @@ def sha(data):
 
 
 def manifest():
-    return json.loads((HERE / f'{PREFIX}_Sources.json').read_text(encoding='utf-8'))
+    return json.loads((HERE / 'sources.json').read_text(encoding='utf-8'))
 
 
 def clean_label(value):
@@ -166,7 +166,7 @@ def build(workspace):
         pending = Path(temporary.name)
     connection = connect(pending)
     try:
-        connection.executescript((HERE / f'{PREFIX}_Schema.sql').read_text(encoding='utf-8'))
+        connection.executescript((HERE / 'schema.sql').read_text(encoding='utf-8'))
         with connection:
             connection.execute('INSERT INTO publisher VALUES (1,?,?)', ('National Bureau of Statistics, Nigeria', 'https://www.nigerianstat.gov.ng/'))
             connection.executemany('INSERT INTO source_resource VALUES (?,?,?,?,?,?)', resources)

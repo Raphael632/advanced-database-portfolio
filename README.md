@@ -1,19 +1,28 @@
-# advanced-database-portfolio
+# Advanced Database Systems Portfolio
 
-MIT 8103 Advanced Database Systems Portfolio — Ezenduka Chukwubuikem, 301913360.
+**Ezenduka Chukwubuikem | 301913360 | MIT 8103**
 
-Case study: **Nigeria Food Price Observatory**, a student-designed system using published National Bureau of Statistics food-price data.
+Case study: Nigeria Food Price Observatory, a simulated research system using published Nigerian National Bureau of Statistics food-price data.
 
-- [Portfolio overview and reproduction instructions](Ezenduka_Chukwubuikem_301913360_README.md)
-- [Portfolio 1: design, schema and normalisation](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Design.md)
-- [Entity-relationship diagram](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_ER_Diagram.png)
-- [Executed verification](Ezenduka_Chukwubuikem_301913360_Portfolio1/Ezenduka_Chukwubuikem_301913360_Verification.md)
-- [AI assistance and student review record](Ezenduka_Chukwubuikem_301913360_AI_Use_Log.md)
+| Portfolio | Topic | Review status |
+|---|---|---|
+| [Portfolio 1](portfolio1/README.md) | Database design and modelling | Student reviewed and approved on 14 October 2026 |
+| [Portfolio 2](portfolio2/README.md) | Query processing and optimisation | Implemented and tested; student review pending |
+| [Portfolio 3](portfolio3/README.md) | Transactions and concurrency | Implemented and verified; student review pending |
+| [Portfolio 4](portfolio4/README.md) | NoSQL document model | Implemented and tested; student review pending |
+| [Portfolio 5](portfolio5/README.md) | Distributed/cloud exercise | Local exercise tested; cloud design proposed; student review pending |
 
-Portfolio 1 is implemented: 3,528 reconciled source observations and 20 passing tests. [Portfolio 2](Ezenduka_Chukwubuikem_301913360_Portfolio2/Ezenduka_Chukwubuikem_301913360_Performance_Analysis.md) has eight analytical queries, measured optimisation evidence and twelve passing tests. [Portfolio 3](Ezenduka_Chukwubuikem_301913360_Portfolio3/Ezenduka_Chukwubuikem_301913360_Transaction_Analysis.md) has nine verified transaction/concurrency scenarios. [Portfolio 4](Ezenduka_Chukwubuikem_301913360_Portfolio4/Ezenduka_Chukwubuikem_301913360_NoSQL_Analysis.md) implements 516 TinyDB documents, six verified queries, review CRUD and twelve passing tests. [Portfolio 5](Ezenduka_Chukwubuikem_301913360_Portfolio5/Ezenduka_Chukwubuikem_301913360_Distributed_Analysis.md) has eight local replication/recovery/sharding scenarios, ten passing tests and a proposed cloud architecture. Visual evidence viewers accompany Portfolios 3–5. Student review, final documentation and packaging remain pending.
+Start with each portfolio's README for its report, evidence and run instructions.
 
-Raw NBS downloads and the populated database remain local under the documented source-use restrictions. This repository includes reproducible code and aggregate evidence.
+## Supporting documents
 
-The [three-page summary draft](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Submission_Summary.pdf) and [final technical/originality review](Ezenduka_Chukwubuikem_301913360_Final_Documentation/Ezenduka_Chukwubuikem_301913360_Final_Audit.md) were prepared on 5 October 2026. The institutional similarity threshold is not yet verified; the personal reflection and submission checks remain pending.
+- [Project guide and data-source restrictions](docs/project_guide.md)
+- [Three-page summary draft](docs/submission_summary.pdf)
+- [Final audit and originality-review limitations](docs/final_audit.md)
+- [AI assistance and review record](docs/ai_use_log.md)
 
-This conventional repository landing page is separate from the student-prefixed README used in the final named submission package.
+Dependency lists are kept beside the code that needs them: [Portfolio 1](portfolio1/requirements.txt) and [Portfolio 4](portfolio4/requirements.txt). These make the work reproducible. The detailed AI-use log supports the assessment's required declaration.
+
+GitHub uses short folder/file names. The final submission will be prepared as a separate package using `Ezenduka_Chukwubuikem_301913360` and the required student-prefixed uploaded filenames. Packaging must update paths consistently and be checked before submission.
+
+Raw NBS downloads, populated databases and credentials are excluded. Personal reflection, remaining student review, institutional similarity verification and final packaging are still pending. No final submission has been made.
