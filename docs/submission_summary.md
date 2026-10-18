@@ -78,7 +78,7 @@ NBS downloads are publicly accessible, but unrestricted redistribution was not e
 
 ## AI-use declaration
 
-**AI tool used: OpenAI Codex.** It assisted with source research, SQL/Python code generation and revision, explanations, diagrams, document preparation and automated test execution. I directed the phased project workflow and provided feedback on GitHub organisation and diagram display. I reviewed Portfolios 1–5 and confirmed that they were satisfactory on 18 October 2026. Automated source reconciliation, test outputs and subsequent corrections are documented in the audit and technology overview. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are implementation tools/libraries, not additional AI services.
+**AI tool used: OpenAI Codex.** I used OpenAI Codex to assist with source research, SQL/Python code generation and revision, explanations, diagrams, document preparation and automated test execution. I directed the phased project workflow and requested corrections to GitHub organisation and diagram display. On 18 October 2026, I confirmed that I had reviewed Portfolios 1-5 and found them satisfactory. I first reviewed and approved Portfolio 1 on 14 October 2026. My review and approval are recorded separately from the automated execution results in the test and audit evidence. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are implementation tools/libraries, not additional AI services.
 
 ## Individual reflection - complete before submission
 
