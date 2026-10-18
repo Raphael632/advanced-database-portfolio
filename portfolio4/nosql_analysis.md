@@ -112,4 +112,4 @@ Follow the [Portfolio 4 README](README.md). Python 3.12 or later and pinned Tiny
 
 Sources: Portfolio 1 NBS source manifest; TinyDB's [introduction](https://tinydb.readthedocs.io/en/latest/intro.html) and [usage documentation](https://tinydb.readthedocs.io/en/latest/usage.html), consulted 3 October 2026. The observed engine version and runtime hashes are recorded in evidence.
 
-Codex assisted with design, coding, execution and explanation. Student review remains pending. Before the final reflection, explain the document boundary, the separate fish labels, the same-element array test, and why this database is not used for concurrent reviewer updates. Record actual personal checks and learning in the AI-use log.
+Codex assisted with design, coding, execution and explanation. student reviewed and approved on 18 October 2026. Before the final reflection, explain the document boundary, the separate fish labels, the same-element array test, and why this database is not used for concurrent reviewer updates. Record actual personal checks and learning in the technology overview.

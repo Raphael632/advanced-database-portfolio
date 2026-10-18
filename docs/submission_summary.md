@@ -64,7 +64,7 @@ A proposed managed PostgreSQL primary, standby, read replica and retained backup
 
 ## Cross-portfolio verification
 
-On 5 October, **54 unit tests passed** (20 + 12 + 12 + 10), alongside nine Portfolio 3 and eight Portfolio 5 integration scenarios. All five phases were re-executed. Source hashes remained unchanged; local document/image links resolved. Reproducible scripts, dated outputs, figures and audit logs are included in the private repository. This verification covers defined cases, not every possible input or deployment.
+On 5 October, **54 unit tests passed** (20 + 12 + 12 + 10), alongside nine Portfolio 3 and eight Portfolio 5 integration scenarios. All five phases were re-executed. Source hashes remained unchanged; local document/image links resolved. Reproducible scripts, dated outputs, figures and audit logs are included in the public repository. This verification covers defined cases, not every possible input or deployment.
 
 
 ---
@@ -74,11 +74,11 @@ On 5 October, **54 unit tests passed** (20 + 12 + 12 + 10), alongside nine Portf
 
 The case study shows why data provenance, transaction boundaries and access patterns should shape database design. Targeted indexes improved tested lookups but did not improve full-coverage aggregation. Version checking protects a reviewer's stale form, while document embedding simplifies monthly retrieval at the cost of repeated metadata. Replicas and backups can both lag acknowledged work, making freshness requirements and recovery points explicit design decisions.
 
-NBS downloads are publicly accessible, but unrestricted redistribution was not established. Raw workbooks and populated databases are therefore excluded; source URLs/checksums and reconstruction instructions are provided. Assessor access to the private repository must be confirmed before submission.
+NBS downloads are publicly accessible, but unrestricted redistribution was not established. Raw workbooks and populated databases are therefore excluded; source URLs/checksums and reconstruction instructions are provided. Assessor access to the public repository must be confirmed before submission.
 
 ## AI-use declaration
 
-**AI tool used: OpenAI Codex.** It assisted with source research, SQL/Python code generation and revision, explanations, diagrams, document preparation and automated test execution. The student directed the phased project workflow and provided feedback on GitHub organisation and diagram display. Automated source reconciliation, test outputs and subsequent corrections are documented in the audit and AI-use log. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are implementation tools/libraries, not additional AI services.
+**AI tool used: OpenAI Codex.** It assisted with source research, SQL/Python code generation and revision, explanations, diagrams, document preparation and automated test execution. I directed the phased project workflow and provided feedback on GitHub organisation and diagram display. I reviewed Portfolios 1–5 and confirmed that they were satisfactory on 18 October 2026. Automated source reconciliation, test outputs and subsequent corrections are documented in the audit and technology overview. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are implementation tools/libraries, not additional AI services.
 
 ## Individual reflection - complete before submission
 

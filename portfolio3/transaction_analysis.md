@@ -93,4 +93,4 @@ This phase does not establish multi-server behaviour, production security, trans
 - SQLite, [Isolation in SQLite](https://www.sqlite.org/isolation.html), accessed 3 October 2026.
 - SQLite, [Transaction control](https://www.sqlite.org/lang_transaction.html), accessed 3 October 2026.
 
-Codex assisted with implementation, execution, verification and explanation. Student review remains pending. Inspect the evidence and explain why T04 can lose a note despite writer locking, why T02 needs explicit rollback, and why T07 requires a fresh transaction. Record your own observations in the AI-use log before writing the personal reflection.
+Codex assisted with implementation, execution, verification and explanation. student reviewed and approved on 18 October 2026. Inspect the evidence and explain why T04 can lose a note despite writer locking, why T02 needs explicit rollback, and why T07 requires a fresh transaction. Record your own observations in the technology overview before writing the personal reflection.

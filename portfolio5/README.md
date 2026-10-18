@@ -1,6 +1,6 @@
 # Portfolio 5: Distributed and cloud database exercise
 
-Status: **local exercise implemented and tested; cloud architecture proposed, not deployed; student review pending**.
+Status: **local exercise implemented and tested; cloud architecture proposed, not deployed; student reviewed and approved on 18 October 2026**.
 
 Start with the [analysis and architecture](distributed_analysis.md). The [HTML evidence viewer](evidence_preview.html) opens locally in a browser; [Markdown evidence](distributed_evidence.md) is readable on GitHub.
 

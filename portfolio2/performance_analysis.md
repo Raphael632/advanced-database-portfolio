@@ -113,4 +113,4 @@ This is a **warm-cache, single-process local experiment** using Python 3.12.14 a
 5. SQLite. *ANALYZE*. https://www.sqlite.org/lang_analyze.html (accessed 3 October 2026).
 6. Python. *sqlite3: Progress handler*. https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.set_progress_handler.
 
-Codex assisted with the SQL, experiment runner, tests, measurements and explanation. The student's personal review and reflection remain pending and are not represented as completed by this report. This detailed phase report will later be condensed into the semester's separate 2-3 page final summary.
+Codex assisted with the SQL, experiment runner, tests, measurements and explanation. The student reviewed and approved this portfolio on 18 October 2026. This detailed phase report will later be condensed into the semester's separate 2-3 page final summary.

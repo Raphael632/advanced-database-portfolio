@@ -17,10 +17,10 @@ The system will import monthly published averages, preserve their provenance, co
 | Phase | Required work | Status |
 |---|---|---|
 | 1 | Design, ER diagram, schema, constraints, normalisation and executed validation | Implemented and tested; student reviewed and approved 14 October 2026 |
-| 2 | SQL results, query plans, indexing and measured performance | Implemented and tested; student review pending |
-| 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student review pending |
-| 4 | Implemented NoSQL model of the same case study | Implemented and tested; student review pending |
-| 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Local exercise implemented and tested; cloud design proposed; student review pending |
+| 2 | SQL results, query plans, indexing and measured performance | Implemented and tested; student reviewed and approved on 18 October 2026 |
+| 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student reviewed and approved on 18 October 2026 |
+| 4 | Implemented NoSQL model of the same case study | Implemented and tested; student reviewed and approved on 18 October 2026 |
+| 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Local exercise implemented and tested; cloud design proposed; student reviewed and approved on 18 October 2026 |
 | Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Three-page review draft and final audit prepared; personal reflection and submission checks pending |
 
 ## Source access and redistribution
@@ -80,11 +80,11 @@ See the [Portfolio 5 guide](../portfolio5/README.md), [analysis and architecture
 
 ## Summary and final audit
 
-The [three-page summary PDF](submission_summary.pdf) and [editable Markdown version](submission_summary.md) are review drafts. The [final audit](final_audit.md) records 54 passing unit tests, fresh execution of all phases, a complete source rebuild and the limitations of the originality review. No institutional similarity percentage is claimed. Personal reflection, accurate student-verification details, assessor access and final packaging must be completed before submission.
+The [three-page summary PDF](submission_summary.pdf) and [editable Markdown version](submission_summary.md) are review drafts. The [final audit](final_audit.md) records 54 passing unit tests, fresh execution of all phases, a complete source rebuild and the limitations of the originality review. No institutional similarity percentage is claimed. Personal reflection, assessor access and final packaging must be completed before submission.
 
 ## Student review
 
-Read the design document and explain (1) why a price needs the month, item and geography to identify it, (2) why 42 rows per source table produce 43 distinct labels overall, and (3) why a task update needs both a version condition and an increment. Run the tests and record any observations or requested changes in the AI-use log. Portfolio 1 was reviewed and approved by the student on 14 October 2026. Specific test executions and personal learning notes have not been recorded; other portfolio reviews and the final reflection remain pending.
+The student confirmed that all five portfolios had been reviewed and were satisfactory on 18 October 2026. Portfolio 1 was first approved on 14 October 2026. The personal reflection should describe the student's own learning and experience.
 
 ## Submission naming
 

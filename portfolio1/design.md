@@ -142,4 +142,4 @@ See the accompanying verification report and test log for actual results. The pr
 4. SQLite. *CREATE TABLE*. https://www.sqlite.org/lang_createtable.html (accessed 2 October 2026).
 5. SQLite. *Isolation in SQLite*. https://www.sqlite.org/isolation.html (accessed 2 October 2026).
 
-This document is the detailed Portfolio 1 explanation, not the final 2-3 page semester summary. AI-assisted design, code and documentation require the student's review and are recorded in the project AI-use log.
+This document is the detailed Portfolio 1 explanation, not the final 2-3 page semester summary. AI-assisted design, code and documentation require the student's review and are recorded in the project technology overview.

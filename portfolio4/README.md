@@ -1,6 +1,6 @@
 # Portfolio 4: NoSQL and advanced data models
 
-Status: **implemented and tested; student review pending**.
+Status: **implemented and tested; student reviewed and approved on 18 October 2026**.
 
 Start with the [NoSQL analysis](nosql_analysis.md). The [visual evidence page](evidence_preview.html) opens locally in a browser; [Markdown results](nosql_evidence.md) can be read directly on GitHub.
 
@@ -31,4 +31,4 @@ The captured report describes one specific run. Keep its evidence together, or u
 | Visual inspection | `evidence_preview.html` |
 | Semantic tests and results | `tests.py`, `test_log.txt` |
 
-Personal review and reflection remain pending. See the AI-use record and root source-use restrictions.
+The student reviewed and approved this portfolio on 18 October 2026. See the technology overview and root source-use restrictions.

@@ -1,6 +1,6 @@
 # Portfolio 2: Query processing and optimisation
 
-**Status:** implemented and tested; student review pending.
+**Status:** implemented and tested; student reviewed and approved on 18 October 2026.
 **Case study:** Nigeria Food Price Observatory, using the Portfolio 1 NBS database.
 
 Start with the [performance analysis](performance_analysis.md). The phase contains eight analytical queries, two covering indexes, an equivalent-predicate rewrite, measured execution plans/timings, 106 checked analytical output rows and twelve passing semantic tests.
@@ -36,4 +36,4 @@ Defaults: 31 rounds, 200 executions per side per round and 20 warm-ups per side.
 
 ## Student review
 
-Explain why the original natural-key index already helps some lookups, why the covering indexes avoid table lookups or a temporary sort, why converting the indexed item column to text changes the access path, and why the coverage query did not improve. Compare elapsed time with the work counters and discuss the 128 KiB storage cost. Record your own checks and learning in the AI-use log before writing the final personal reflection.
+Explain why the original natural-key index already helps some lookups, why the covering indexes avoid table lookups or a temporary sort, why converting the indexed item column to text changes the access path, and why the coverage query did not improve. Compare elapsed time with the work counters and discuss the 128 KiB storage cost. Record your own checks and learning in the technology overview before writing the final personal reflection.

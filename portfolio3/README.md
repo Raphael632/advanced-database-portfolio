@@ -1,6 +1,6 @@
 # Portfolio 3: Transactions and concurrency
 
-Status: **implemented and verified; student review pending**.
+Status: **implemented and verified; student reviewed and approved on 18 October 2026**.
 
 Start with the [transaction analysis](transaction_analysis.md). Open the [HTML evidence viewer](evidence_preview.html) locally in a browser for the process sequence and expandable SQL traces. GitHub displays HTML source; [Markdown evidence](transaction_evidence.md) can be read directly on GitHub.
 
@@ -27,4 +27,4 @@ Each run creates a fresh `portfolio3_TIMESTAMP` directory containing a local-onl
 
 The runner is also the integration test harness: it checks expected rows, versions, error codes and transaction states, and stops on a mismatch. SQL is embedded in the runner and captured by connection in JSON. All nine scenarios passed in the submitted run. Connections are deterministically interleaved; this is not a load test.
 
-Only fictional review notes are exported. Keep populated databases/WAL files out of Git and the submission. See the root source-use notes and AI-use record. Student explanation and reflection are still pending.
+Only fictional review notes are exported. Keep populated databases/WAL files out of Git and the submission. See the root source-use notes and technology overview. The student reviewed and approved this portfolio on 18 October 2026.

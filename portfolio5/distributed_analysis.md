@@ -87,4 +87,4 @@ Follow the [Portfolio 5 README](README.md) to reproduce. The HTML viewer provide
 
 References: Portfolio 1's NBS source manifest; [SQLite Backup API](https://www.sqlite.org/backup.html); [PostgreSQL standby servers](https://www.postgresql.org/docs/current/warm-standby.html), consulted 4 October 2026. PostgreSQL is referenced for the proposed architecture and has not been deployed or tested in this project.
 
-Codex assisted with design, implementation, execution and documentation. Personal student review remains pending. Explain why an acknowledged edit may be absent from a replica or backup, why a stale replica must not be promoted casually, and why a missing shard prevents a complete global result. Record your own verification and learning before the final reflection.
+Codex assisted with design, implementation, execution and documentation. Personal student reviewed and approved on 18 October 2026. Explain why an acknowledged edit may be absent from a replica or backup, why a stale replica must not be promoted casually, and why a missing shard prevents a complete global result. Record your own verification and learning before the final reflection.
