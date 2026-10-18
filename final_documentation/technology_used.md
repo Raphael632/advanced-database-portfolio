@@ -33,7 +33,7 @@ I used OpenAI Codex to assist with source research, project planning, SQL and Py
 
 On 18 October 2026, I confirmed that I had reviewed Portfolios 1–5 and found them satisfactory. I first reviewed and approved Portfolio 1 on 14 October 2026. This records my review and approval; automated execution results are documented separately in the test and audit evidence.
 
-I have included the assessment's required AI declaration in the submission summary. My personal reflection will describe my own learning and experience.
+I have included the assessment's required AI declaration in the submission summary. My personal reflection in the summary describes my experience of reviewing the project.
 
 ## Data source and proposed architecture
 

@@ -16,4 +16,4 @@ python portfolio1/build.py all
 python portfolio1/tests.py
 ```
 
-Use `validate` instead of `all` to check an existing database. The optional PowerShell launcher is `./portfolio1/run.ps1`. Sources and the populated database stay in the ignored `.local` folder. See the [project guide](../docs/project_guide.md) for source-use restrictions and reproduction details.
+Use `validate` instead of `all` to check an existing database. The optional PowerShell launcher is `./portfolio1/run.ps1`. Sources and the populated database stay in the ignored `.local` folder. See the [project guide](../final_documentation/project_guide.md) for source-use restrictions and reproduction details.

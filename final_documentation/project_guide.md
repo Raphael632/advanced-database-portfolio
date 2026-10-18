@@ -21,7 +21,7 @@ The system will import monthly published averages, preserve their provenance, co
 | 3 | Commit, rollback, isolation and concurrent reviewer updates | Implemented and verified; student reviewed and approved on 18 October 2026 |
 | 4 | Implemented NoSQL model of the same case study | Implemented and tested; student reviewed and approved on 18 October 2026 |
 | 5 | Distributed/cloud architecture or exercise with stated consistency tradeoffs | Local exercise implemented and tested; cloud design proposed; student reviewed and approved on 18 October 2026 |
-| Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Three-page review draft and final audit prepared; personal reflection and submission checks pending |
+| Final | 2-3 page summary, supporting evidence, personal reflection and AI declaration | Three-page summary, personal reflection, AI declaration and final audit prepared |
 
 ## Source access and redistribution
 
@@ -76,15 +76,15 @@ See the [Portfolio 4 guide](../portfolio4/README.md), [document model and analys
 
 Eight local integration scenarios and ten focused tests passed. The exercise implements primary/replica review-event replay, freshness-aware reads, simulated outage refusal, worker recovery, backup restore and two month-range shards of 1,764 observations each. Their union exactly reproduces the 3,528-row source projection. The report distinguishes these local SQLite files and simulated outages from its proposed cloud architecture; no cloud cluster is deployed.
 
-See the [Portfolio 5 guide](../portfolio5/README.md), [analysis and architecture](../portfolio5/distributed_analysis.md) and [executed evidence](../portfolio5/distributed_evidence.md). All five technical phase implementations now have evidence; final documentation, student reflection and submission packaging are still pending.
+See the [Portfolio 5 guide](../portfolio5/README.md), [analysis and architecture](../portfolio5/distributed_analysis.md) and [executed evidence](../portfolio5/distributed_evidence.md). All five technical phase implementations now have evidence; final documentation and the student reflection are complete; submission packaging remains outstanding.
 
 ## Summary and final audit
 
-The [three-page summary PDF](submission_summary.pdf) and [editable Markdown version](submission_summary.md) are review drafts. The [final audit](final_audit.md) records 54 passing unit tests, fresh execution of all phases, a complete source rebuild and the limitations of the originality review. No institutional similarity percentage is claimed. Personal reflection, assessor access and final packaging must be completed before submission.
+The [three-page summary PDF](submission_summary.pdf) and [editable Markdown version](submission_summary.md) include the completed personal reflection and AI declaration. The [final audit](final_audit.md) records 54 passing unit tests, fresh execution of all phases, a complete source rebuild and the limitations of the originality review. No institutional similarity percentage is claimed. Assessor access and final packaging must be checked before submission.
 
 ## Student review
 
-The student confirmed that all five portfolios had been reviewed and were satisfactory on 18 October 2026. Portfolio 1 was first approved on 14 October 2026. The personal reflection should describe the student's own learning and experience.
+The student confirmed that all five portfolios had been reviewed and were satisfactory on 18 October 2026. Portfolio 1 was first approved on 14 October 2026. The summary includes the personal reflection supplied by the student.
 
 ## Submission naming
 

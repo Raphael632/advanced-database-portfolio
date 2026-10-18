@@ -57,7 +57,7 @@ For only 3,528 observations, production sharding is unnecessary complexity. This
 
 A future deployment could use an application service with a managed PostgreSQL primary and a standby in a separate fault domain. The normalised source tables and reviewer workflow remain authoritative. A read replica could serve lag-tolerant analytics, and a rebuildable document projection could support monthly item pages. The TinyDB file from Portfolio 4 should not be shared among concurrent web workers.
 
-Writes and freshness-sensitive reads should use the primary unless the service can verify a replica's required apply position. Asynchronous replication trades delayed visibility and potential loss of unreplicated commits on failover for fewer replication waits. A configured synchronous standby can increase commit waiting and reduce write availability when the required acknowledgement cannot be obtained. Exact guarantees depend on configuration, durable storage and the promotion procedure; see [PostgreSQL standby documentation](https://www.postgresql.org/docs/current/warm-standby.html).
+Writes and freshness-sensitive reads should use the primary unless the service can verify a replica's required apply position. Asynchronous replication trades delayed visibility and potential loss of unreplicated commits on failover for fewer replication waits. A configured synchronous standby can increase commit waiting and reduce write availability when the required acknowledgement cannot be obtained. Exact guarantees depend on configuration, durable storage and the promotion procedure; see [PostgreSQL standby documentation](https://www.postgresql.org/final_documentation/current/warm-standby.html).
 
 This proposal requires a tested SQLite-to-PostgreSQL migration, including strict typing assumptions, integer-kobo constraints, trigger syntax and the conditional version update. The SQLite scripts are not presented as directly deployable PostgreSQL migrations.
 
@@ -85,6 +85,6 @@ The run uses Python 3.12.14 and SQLite 3.53.1, with foreign keys enabled and `sy
 
 Follow the [Portfolio 5 README](README.md) to reproduce. The HTML viewer provides the executed scenario results without relying on Mermaid rendering.
 
-References: Portfolio 1's NBS source manifest; [SQLite Backup API](https://www.sqlite.org/backup.html); [PostgreSQL standby servers](https://www.postgresql.org/docs/current/warm-standby.html), consulted 4 October 2026. PostgreSQL is referenced for the proposed architecture and has not been deployed or tested in this project.
+References: Portfolio 1's NBS source manifest; [SQLite Backup API](https://www.sqlite.org/backup.html); [PostgreSQL standby servers](https://www.postgresql.org/final_documentation/current/warm-standby.html), consulted 4 October 2026. PostgreSQL is referenced for the proposed architecture and has not been deployed or tested in this project.
 
 Codex assisted with design, implementation, execution and documentation. Personal student reviewed and approved on 18 October 2026. Explain why an acknowledged edit may be absent from a replica or backup, why a stale replica must not be promoted casually, and why a missing shard prevents a complete global result. Record your own verification and learning before the final reflection.

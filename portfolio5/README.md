@@ -30,4 +30,4 @@ Each run creates a new `portfolio5_TIMESTAMP` directory containing local-only pr
 | Cloud design | Explicitly proposed architecture and PNG diagram |
 | Executed checks | Evidence JSON/Markdown/HTML plus test log |
 
-The original source is unchanged. Populated databases, including shard projections, must remain local and outside Git/submission. No cloud resources or costs are incurred. Personal reflection is still pending.
+The original source is unchanged. Populated databases, including shard projections, must remain local and outside Git/submission. No cloud resources or costs are incurred. The personal reflection is included in the [submission summary](../final_documentation/submission_summary.md#individual-reflection).

@@ -4,7 +4,7 @@
 MIT 8103 - 2026/2027 First Semester
 
 Repository: [https://github.com/Raphael632/advanced-database-portfolio](https://github.com/Raphael632/advanced-database-portfolio)
-Review draft: personal reflection and submission checks remain to be completed.
+Selected organisation: National Bureau of Statistics (Nigeria).
 
 ## Case study and data
 
@@ -74,19 +74,15 @@ On 5 October, **54 unit tests passed** (20 + 12 + 12 + 10), alongside nine Portf
 
 The case study shows why data provenance, transaction boundaries and access patterns should shape database design. Targeted indexes improved tested lookups but did not improve full-coverage aggregation. Version checking protects a reviewer's stale form, while document embedding simplifies monthly retrieval at the cost of repeated metadata. Replicas and backups can both lag acknowledged work, making freshness requirements and recovery points explicit design decisions.
 
-NBS downloads are publicly accessible, but unrestricted redistribution was not established. Raw workbooks and populated databases are therefore excluded; source URLs/checksums and reconstruction instructions are provided. Assessor access to the public repository must be confirmed before submission.
+NBS downloads are publicly accessible, but unrestricted redistribution was not established. Raw workbooks and populated databases are therefore excluded; source URLs/checksums and reconstruction instructions are provided.
 
 ## AI-use declaration
 
 **AI tool used: OpenAI Codex.** I used OpenAI Codex to assist with source research, SQL/Python code generation and revision, explanations, diagrams, document preparation and automated test execution. I directed the phased project workflow and requested corrections to GitHub organisation and diagram display. On 18 October 2026, I confirmed that I had reviewed Portfolios 1-5 and found them satisfactory. I first reviewed and approved Portfolio 1 on 14 October 2026. My review and approval are recorded separately from the automated execution results in the test and audit evidence. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are implementation tools/libraries, not additional AI services.
 
-## Individual reflection - complete before submission
+## Individual reflection
 
-Add a concise first-person account of actual work: a design choice you can explain; a challenge you investigated; the scripts or outputs you personally checked and any correction you made; and what you learned or would improve. Use these details to complete the student-verification part of the AI declaration. This section is intentionally reserved for a genuine personal account.
-
-## Originality review status
-
-A limited exact-phrase check found no matching 12-word windows between the five main reports and nine cited official documentation pages; sampled web searches found no confirmed exact passage match. This is **not an institutional plagiarism test or similarity score**. Paraphrases, code similarity and closed student-paper collections are outside its scope. Compliance with the required maximum similarity index of 20% remains unverified; the separate audit explains the method and limits.
+Through reviewing this project, I learned that Nigerian food-price data was a well-suited dataset for the portfolio. It provided a relevant Nigerian context for the database work across the five phases. I found Portfolio 3, which focuses on transactions and concurrency, somewhat challenging. I have reviewed all five portfolios and am satisfied with the completed work.
 
 ## Selected references
 

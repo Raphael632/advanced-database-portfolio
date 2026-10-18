@@ -37,6 +37,6 @@ This method does not detect all paraphrases, translations, structural copying, c
 
 OpenAI Codex is the AI tool used. It assisted with source research, code and documentation generation, diagrams, debugging and automated execution. Python, SQLite, TinyDB, openpyxl, Git and ReportLab are software tools/libraries, not additional AI services. The detailed assistance record remains in [Technologies used](technology_used.md).
 
-The three-page summary is a **review draft**. Before submission, complete the personal technical reflection, obtain the approved similarity result if available, confirm the assessor can access the public repository, and finish the named submission package. No final submission has been made.
+The three-page summary includes the student's reflection and approval dated 18 October 2026. Before submission, obtain the approved similarity result if available, confirm the assessor can access the public repository, and finish the named submission package. No final submission has been made.
 
 Evidence files: `audit_evidence.json`, `audit_log.txt`, and `originality_check_evidence.json`.
