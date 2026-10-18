@@ -29,11 +29,11 @@
 
 ## AI assistance and student review
 
-OpenAI Codex assisted with source research, project planning, SQL and Python implementation, debugging, diagrams, explanations, document preparation and automated verification. The student directed the phased workflow and requested corrections to repository organisation and diagram display.
+I used OpenAI Codex to assist with source research, project planning, SQL and Python implementation, debugging, diagrams, explanations, document preparation and automated verification. I directed the phased workflow and requested corrections to repository organisation and diagram display.
 
-On 18 October 2026, Ezenduka Chukwubuikem confirmed that Portfolios 1–5 had all been reviewed and were satisfactory. Portfolio 1 was first approved on 14 October 2026. This records the student's review and approval; automated execution results are documented separately in the test and audit evidence.
+On 18 October 2026, I confirmed that I had reviewed Portfolios 1–5 and found them satisfactory. I first reviewed and approved Portfolio 1 on 14 October 2026. This records my review and approval; automated execution results are documented separately in the test and audit evidence.
 
-The assessment's required AI declaration is retained in the submission summary. The personal reflection will describe the student's own learning and experience.
+I have included the assessment's required AI declaration in the submission summary. My personal reflection will describe my own learning and experience.
 
 ## Data source and proposed architecture
 
